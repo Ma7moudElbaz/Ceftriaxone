@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#094F85</color>
+    <color name="colorPrimaryDark">#094F85</color>
+    <color name="colorAccent">#F2AD00</color>
+
+
+
+    <color name="bottom_nav_bg">#51AAAC</color>
+    <color name="lightText">#8c8c8c</color>
+    <color name="white">#FEFEFE</color>
+    <color name="gray">#BFC2C2C2</color>
+    <color name="separator_bg">#9AD6D6D6</color>
+    <color name="loginfields_bg">#B5E6E6E6</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00ffffff</color>
+</resources>

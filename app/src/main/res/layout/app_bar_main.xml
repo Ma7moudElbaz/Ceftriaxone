@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:tint="@color/white"
+            android:padding="15dp"
+            android:src="@drawable/logo" />
+
+
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="70dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="true"
+            android:padding="20dp"
+            android:tint="@color/white"
+            android:src="@drawable/ic_drawer" />
+
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:layout_above="@id/btm_nav"/>
+
+    <LinearLayout
+        android:id="@+id/btm_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="7"
+        android:background="@color/bottom_nav_bg"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btm_nav_speciality"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_speciality"
+            android:padding="15dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/btm_nav_indications"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_indications"
+            android:padding="15dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/btm_nav_products"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_products"
+            android:padding="15dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/btm_nav_populations"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_population"
+            android:padding="15dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/btm_nav_contraindications"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_contraindications"
+            android:padding="15dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/btm_nav_tips"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_tips"
+            android:padding="15dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/btm_nav_pi"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_pi"
+            android:padding="15dp"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

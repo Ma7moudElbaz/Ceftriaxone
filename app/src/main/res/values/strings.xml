@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Ceftriaxone</string>
+
+
+    <string name="menu_speciality">Speciality</string>
+    <string name="menu_indications">Indications</string>
+    <string name="menu_products">Ceftriaxone Products</string>
+    <string name="menu_population">Special Populations</string>
+    <string name="menu_contraindications">Contraindications</string>
+    <string name="menu_tips">General tips of dosage</string>
+    <string name="menu_pi">Prescribing information</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

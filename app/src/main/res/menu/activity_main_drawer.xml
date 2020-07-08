@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    tools:showIn="navigation_view"-->
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_speciality"
+            android:icon="@drawable/ic_speciality"
+            android:title="@string/menu_speciality"
+            android:iconTint="@color/white"/>
+
+        <item
+            android:id="@+id/nav_indications"
+            android:icon="@drawable/ic_indications"
+            android:title="@string/menu_indications"
+            android:iconTint="@color/white"/>
+
+        <item
+            android:id="@+id/nav_products"
+            android:icon="@drawable/ic_products"
+            android:title="@string/menu_products"
+            android:iconTint="@color/white"/>
+
+        <item
+            android:id="@+id/nav_population"
+            android:icon="@drawable/ic_population"
+            android:title="@string/menu_population"
+            android:iconTint="@color/white"/>
+
+        <item
+            android:id="@+id/nav_contraindications"
+            android:icon="@drawable/ic_contraindications"
+            android:title="@string/menu_contraindications"
+            android:iconTint="@color/white"/>
+
+        <item
+            android:id="@+id/nav_tips"
+            android:icon="@drawable/ic_tips"
+            android:title="@string/menu_tips"
+            android:iconTint="@color/white"/>
+
+        <item
+            android:id="@+id/nav_pi"
+            android:icon="@drawable/ic_pi"
+            android:title="@string/menu_pi"
+            android:iconTint="@color/white"/>
+
+
+    </group>
+
+</menu>
