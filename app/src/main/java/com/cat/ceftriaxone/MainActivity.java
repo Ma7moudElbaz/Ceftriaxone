@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         btm_nav_speciality = findViewById(R.id.btm_nav_speciality);
         btm_nav_indications = findViewById(R.id.btm_nav_indications);
         btm_nav_products = findViewById(R.id.btm_nav_products);
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         nav_Menu = navigationView.getMenu();
-
 
         navigateToSpeciality();
 
