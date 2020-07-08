@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".speciality.Speciality_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/speciality_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Speciality" />
+        android:layout_height="wrap_content"
+        android:padding="5dp"/>
 
 </FrameLayout>

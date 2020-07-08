@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+
+
+
+        <ImageView
+            android:id="@+id/speciality_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:src="@drawable/ic_chest"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:adjustViewBounds="true"/>
+
+
+    <TextView
+        android:id="@+id/speciality_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:minLines="2"
+        android:text="Kuwait’s Planned Mega Project to Spur USD 200 Bn Foreign Investment"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+
+</LinearLayout>
