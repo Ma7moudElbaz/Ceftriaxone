@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cat.ceftriaxone.MainActivity;
 import com.cat.ceftriaxone.R;
 
 import java.util.ArrayList;
@@ -37,6 +38,9 @@ public class Speciality_fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        MainActivity activity = (MainActivity) getActivity();
+        activity.setSpecialityColors();
+
 
         items = new ArrayList<>();
         setSpecialityItems();

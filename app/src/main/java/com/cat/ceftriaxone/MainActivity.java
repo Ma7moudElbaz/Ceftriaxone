@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ImageView btm_nav_speciality, btm_nav_indications, btm_nav_products, btm_nav_populations, btm_nav_contraindications, btm_nav_tips, btm_nav_pi;
 
 
-    public void setContentFragment(Fragment fragment) {
+    public void setContentFragment(Fragment fragment ,String fragmentName) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.contentLayout, fragment);
-        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.addToBackStack(fragmentName);
         fragmentTransaction.commit();
 
     }
@@ -84,7 +84,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         nav_Menu = navigationView.getMenu();
 
-        navigateToSpeciality();
+//        navigateToSpeciality();
+        setContentFragment(new Speciality_fragment(),"");
 
     }
 
@@ -147,44 +148,59 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void navigateToSpeciality() {
-        setContentFragment(new Speciality_fragment());
+        setContentFragment(new Speciality_fragment() ,"Speciality_fragment");
+        setSpecialityColors();
+    }
+    public void setSpecialityColors() {
         navigationView.setCheckedItem(R.id.nav_speciality);
         setBottomNavSelected(btm_nav_speciality);
-
     }
 
+
+
+
     private void navigateToIndications() {
-        setContentFragment(new Indications_fragment());
+        setContentFragment(new Indications_fragment(),"Indications_fragment");
+        setIndicationsColors();
+    }
+    public void setIndicationsColors() {
         navigationView.setCheckedItem(R.id.nav_speciality);
         setBottomNavSelected(btm_nav_indications);
     }
 
+
+
     private void navigateToProducts() {
-        setContentFragment(new Products_fragment());
+        setContentFragment(new Products_fragment(),"Products_fragment");
+
+    }
+
+    public void setProductsColors(){
         navigationView.setCheckedItem(R.id.nav_products);
         setBottomNavSelected(btm_nav_products);
+
     }
 
     private void navigateToPopulation() {
-        setContentFragment(new Populations_fragment());
+        setContentFragment(new Populations_fragment(),"Populations_fragment");
         navigationView.setCheckedItem(R.id.nav_population);
         setBottomNavSelected(btm_nav_populations);
     }
 
     private void navigateToContraindications() {
-        setContentFragment(new Contraindications_fragment());
+        setContentFragment(new Contraindications_fragment(),"Contraindications_fragment");
         navigationView.setCheckedItem(R.id.nav_contraindications);
         setBottomNavSelected(btm_nav_contraindications);
     }
 
     private void navigateToTips() {
-        setContentFragment(new Tips_fragment());
+        setContentFragment(new Tips_fragment(),"Tips_fragment");
         navigationView.setCheckedItem(R.id.nav_tips);
         setBottomNavSelected(btm_nav_tips);
     }
 
     private void navigateToPI() {
-        setContentFragment(new PI_fragment());
+        setContentFragment(new PI_fragment(),"PI_fragment");
         navigationView.setCheckedItem(R.id.nav_pi);
         setBottomNavSelected(btm_nav_pi);
     }
@@ -195,17 +211,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (drawer.isDrawerOpen(GravityCompat.END)) {
             drawer.closeDrawer(GravityCompat.END);
         } else {
-            new AlertDialog.Builder(MainActivity.this)
-                    .setTitle("Are you sure you want to exit ? ")
-//                    .setMessage("You have to login first")
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // Continue with delete operation
-                            finish();
-                        }
-                    })
-                    .setNegativeButton("Dismiss", null)
-                    .show();
+            super.onBackPressed();
+//            new AlertDialog.Builder(MainActivity.this)
+//                    .setTitle("Are you sure you want to exit ? ")
+////                    .setMessage("You have to login first")
+//                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            // Continue with delete operation
+//                            finish();
+//                        }
+//                    })
+//                    .setNegativeButton("Dismiss", null)
+//                    .show();
         }
     }
 
