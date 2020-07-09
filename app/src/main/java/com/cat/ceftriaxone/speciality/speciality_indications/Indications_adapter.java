@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cat.ceftriaxone.MainActivity;
 import com.cat.ceftriaxone.R;
+import com.cat.ceftriaxone.speciality.indications.Indication_container;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,8 +49,7 @@ public class Indications_adapter extends RecyclerView.Adapter<Indications_adapte
             @Override
             public void onClick(View view) {
                 MainActivity activity = (MainActivity) mContext;
-                String fragmentName = "Indication_"+items.get(position).getId();
-                activity.setContentFragment(items.get(position).getFragment(),fragmentName);
+                activity.setContentFragment(new Indication_container(),"Indication Container");
 
             }
         });

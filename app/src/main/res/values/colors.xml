@@ -7,6 +7,8 @@
 
 
     <color name="bottom_nav_bg">#51AAAC</color>
+    <color name="active_tab">#094F85</color>
+    <color name="inActive_tab">#51AAAC</color>
     <color name="indications_item_bg">#F6F7F9</color>
     <color name="white">#fff</color>
     <color name="gray">#BFC2C2C2</color>

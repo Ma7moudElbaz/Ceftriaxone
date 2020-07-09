@@ -5,13 +5,11 @@ import androidx.fragment.app.Fragment;
 public class Indications_item {
     private int id,img;
     private String title;
-    private Fragment fragment;
 
-    public Indications_item(int id, int img, String title, Fragment fragment) {
+    public Indications_item(int id, int img, String title) {
         this.id = id;
         this.img = img;
         this.title = title;
-        this.fragment = fragment;
     }
 
     public int getId() {
@@ -38,11 +36,5 @@ public class Indications_item {
         this.title = title;
     }
 
-    public Fragment getFragment() {
-        return fragment;
-    }
 
-    public void setFragment(Fragment fragment) {
-        this.fragment = fragment;
-    }
 }
