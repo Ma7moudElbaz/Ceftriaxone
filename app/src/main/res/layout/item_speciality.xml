@@ -14,7 +14,6 @@
             android:id="@+id/speciality_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:src="@drawable/ic_chest"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"

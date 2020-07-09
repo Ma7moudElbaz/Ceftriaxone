@@ -37,17 +37,27 @@ public class Speciality_fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        items = new ArrayList<>();
-        items.add(new Speciality_item(1,R.drawable.ic_chest,"Chest"));
-        items.add(new Speciality_item(1,R.drawable.ic_ent,"Ear, Nose and Throat(ENT)"));
-        items.add(new Speciality_item(1,R.drawable.ic_surgeon,"Surgeon"));
-        items.add(new Speciality_item(1,R.drawable.ic_im_gp,"Internal Medicine (IM) General Practitioner (GP)"));
-        items.add(new Speciality_item(1,R.drawable.ic_urology,"Urology"));
-        items.add(new Speciality_item(1,R.drawable.ic_pediatric,"Pediatrics"));
 
-        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
+        items = new ArrayList<>();
+        setSpecialityItems();
+
         specialityRecycler = view.findViewById(R.id.speciality_recycler);
-         adapter = new Speciality_adapter(getActivity(), items);
+        setSpecialityRecycler();
+
+    }
+
+    private void setSpecialityItems() {
+        items.add(new Speciality_item(1, R.drawable.ic_chest, "Chest"));
+        items.add(new Speciality_item(2, R.drawable.ic_ent, "Ear, Nose and Throat(ENT)"));
+        items.add(new Speciality_item(3, R.drawable.ic_surgeon, "Surgeon"));
+        items.add(new Speciality_item(4, R.drawable.ic_im_gp, "Internal Medicine (IM) General Practitioner (GP)"));
+        items.add(new Speciality_item(5, R.drawable.ic_urology, "Urology"));
+        items.add(new Speciality_item(6, R.drawable.ic_pediatric, "Pediatrics"));
+    }
+
+    private void setSpecialityRecycler(){
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
+        adapter = new Speciality_adapter(getActivity(), items);
         specialityRecycler.setLayoutManager(layoutManager);
         specialityRecycler.setAdapter(adapter);
     }
