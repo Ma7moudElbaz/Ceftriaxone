@@ -14,10 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cat.ceftriaxone.R;
-import com.cat.ceftriaxone.speciality.Speciality_adapter;
-import com.cat.ceftriaxone.speciality.Speciality_item;
+import com.cat.ceftriaxone.speciality.Indications_fragment_names;
+import com.cat.ceftriaxone.speciality.Indications_names;
+import com.cat.ceftriaxone.speciality.indications.Indication_2;
+import com.cat.ceftriaxone.speciality.indications.Indication_3;
+import com.cat.ceftriaxone.speciality.indications.Indication_4;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Speciality_indications_fragment extends Fragment {
 
@@ -50,55 +54,63 @@ public class Speciality_indications_fragment extends Fragment {
     }
 
     private void setIndicationsItems() {
+
+        Indications_names names = new Indications_names();
+        Map<Integer, String> indicationsNames = names.getNames();
+
+        Indications_fragment_names fnames = new Indications_fragment_names();
+        Map<Integer, Fragment> fragmentsNames = fnames.getFragmentsNames();
+
+
         switch (specialityId){
             case 1:
-                items.add(new Indications_item(1, R.drawable.ic_chest, "Community acquired pneumonia (CAP)"));
-                items.add(new Indications_item(2, R.drawable.ic_chest, "Hospital acquired pneumonia (HAP))"));
-                items.add(new Indications_item(3, R.drawable.ic_chest, "Acute exacerbations of chronic obstructive pulmonary disease (COPD) in adults"));
+                items.add(new Indications_item(1, R.drawable.ic_chest, indicationsNames.get(1),fragmentsNames.get(1)));
+                items.add(new Indications_item(2, R.drawable.ic_chest,  indicationsNames.get(2),fragmentsNames.get(2)));
+                items.add(new Indications_item(3, R.drawable.ic_chest,  indicationsNames.get(3),fragmentsNames.get(3)));
                 break;
 
             case 2:
-                items.add(new Indications_item(4, R.drawable.ic_ent, "Acute otitis media (AOM)"));
+                items.add(new Indications_item(4, R.drawable.ic_ent,  indicationsNames.get(4),fragmentsNames.get(4)));
                 break;
 
             case 3:
-                items.add(new Indications_item(5, R.drawable.ic_surgeon, "Complicated skin and soft tissue infections"));
-                items.add(new Indications_item(6, R.drawable.ic_surgeon, "Pre-operative prophylaxis of surgical site infection"));
+                items.add(new Indications_item(5, R.drawable.ic_surgeon,  indicationsNames.get(5),fragmentsNames.get(5)));
+                items.add(new Indications_item(6, R.drawable.ic_surgeon,  indicationsNames.get(6),fragmentsNames.get(6)));
                 break;
 
             case 4:
-                items.add(new Indications_item(7, R.drawable.ic_im_gp, "Community acquired pneumonia (CAP)"));
-                items.add(new Indications_item(8, R.drawable.ic_im_gp, "Acute exacerbations of chronic obstructive pulmonary disease (COPD) in adults"));
-                items.add(new Indications_item(9, R.drawable.ic_im_gp, "Acute otitis media (AOM)"));
-                items.add(new Indications_item(10, R.drawable.ic_im_gp, "Intra-abdominal infections"));
-                items.add(new Indications_item(11, R.drawable.ic_im_gp, "Complicated skin and soft tissue infections"));
-                items.add(new Indications_item(12, R.drawable.ic_im_gp, "Infections of bones and joints"));
-                items.add(new Indications_item(13, R.drawable.ic_im_gp, "Bacterial Meningitis"));
-                items.add(new Indications_item(14, R.drawable.ic_im_gp, "Bacterial Endocarditis"));
-                items.add(new Indications_item(15, R.drawable.ic_im_gp, "Neutropenic patients with fever that is suspected to be due to a bacterial infection"));
-                items.add(new Indications_item(16, R.drawable.ic_im_gp, "Disseminated Lyme borreliosis"));
+                items.add(new Indications_item(1, R.drawable.ic_im_gp,  indicationsNames.get(1),fragmentsNames.get(1)));
+                items.add(new Indications_item(3, R.drawable.ic_im_gp,  indicationsNames.get(3),fragmentsNames.get(3)));
+                items.add(new Indications_item(4, R.drawable.ic_im_gp,  indicationsNames.get(4),fragmentsNames.get(4)));
+                items.add(new Indications_item(7, R.drawable.ic_im_gp,  indicationsNames.get(7),fragmentsNames.get(7)));
+                items.add(new Indications_item(5, R.drawable.ic_im_gp,  indicationsNames.get(5),fragmentsNames.get(5)));
+                items.add(new Indications_item(8, R.drawable.ic_im_gp,  indicationsNames.get(8),fragmentsNames.get(8)));
+                items.add(new Indications_item(9, R.drawable.ic_im_gp,  indicationsNames.get(9),fragmentsNames.get(9)));
+                items.add(new Indications_item(10, R.drawable.ic_im_gp,  indicationsNames.get(10),fragmentsNames.get(10)));
+                items.add(new Indications_item(11, R.drawable.ic_im_gp,  indicationsNames.get(11),fragmentsNames.get(11)));
+                items.add(new Indications_item(12, R.drawable.ic_im_gp,  indicationsNames.get(12),fragmentsNames.get(12)));
                 break;
 
             case 5:
-                items.add(new Indications_item(17, R.drawable.ic_urology, "Complicated urinary tract infections (including pyelonephritis)"));
-                items.add(new Indications_item(18, R.drawable.ic_urology, "Gonorrhoea"));
-                items.add(new Indications_item(19, R.drawable.ic_urology, "Syphilis - Neurosyphilis"));
+                items.add(new Indications_item(13, R.drawable.ic_urology,  indicationsNames.get(13),fragmentsNames.get(13)));
+                items.add(new Indications_item(14, R.drawable.ic_urology,  indicationsNames.get(14),fragmentsNames.get(14)));
+                items.add(new Indications_item(15, R.drawable.ic_urology,  indicationsNames.get(15),fragmentsNames.get(15)));
                 break;
 
             case 6:
-                items.add(new Indications_item(20, R.drawable.ic_pediatric, "Community acquired pneumonia (CAP)"));
-                items.add(new Indications_item(21, R.drawable.ic_pediatric, "Hospital acquired pneumonia (HAP)"));
-                items.add(new Indications_item(22, R.drawable.ic_pediatric, "Acute otitis media (AOM)"));
-                items.add(new Indications_item(23, R.drawable.ic_pediatric, "Complicated skin and soft tissue infections"));
-                items.add(new Indications_item(24, R.drawable.ic_pediatric, "Pre-operative prophylaxis for surgical site infection"));
-                items.add(new Indications_item(25, R.drawable.ic_pediatric, "Disseminated Lyme borreliosis"));
-                items.add(new Indications_item(26, R.drawable.ic_pediatric, "Intra-abdominal infections"));
-                items.add(new Indications_item(27, R.drawable.ic_pediatric, "Infections of bones and joints"));
-                items.add(new Indications_item(28, R.drawable.ic_pediatric, "Bacterial Meningitis"));
-                items.add(new Indications_item(29, R.drawable.ic_pediatric, "Bacterial Endocarditis"));
-                items.add(new Indications_item(30, R.drawable.ic_pediatric, "Neutropenic patients with fever that is suspected to be due to a bacterial infection"));
-                items.add(new Indications_item(31, R.drawable.ic_pediatric, "Complicated urinary tract infections (including pyelonephritis)"));
-                items.add(new Indications_item(32, R.drawable.ic_pediatric, "Syphilis - Neurosyphilis"));
+                items.add(new Indications_item(1, R.drawable.ic_pediatric,  indicationsNames.get(1),fragmentsNames.get(1)));
+                items.add(new Indications_item(2, R.drawable.ic_pediatric,  indicationsNames.get(2),fragmentsNames.get(2)));
+                items.add(new Indications_item(4, R.drawable.ic_pediatric,  indicationsNames.get(4),fragmentsNames.get(4)));
+                items.add(new Indications_item(5, R.drawable.ic_pediatric,  indicationsNames.get(5),fragmentsNames.get(5)));
+                items.add(new Indications_item(6, R.drawable.ic_pediatric,  indicationsNames.get(6),fragmentsNames.get(6)));
+                items.add(new Indications_item(12, R.drawable.ic_pediatric,  indicationsNames.get(12),fragmentsNames.get(12)));
+                items.add(new Indications_item(7, R.drawable.ic_pediatric,  indicationsNames.get(7),fragmentsNames.get(7)));
+                items.add(new Indications_item(8, R.drawable.ic_pediatric,  indicationsNames.get(8),fragmentsNames.get(8)));
+                items.add(new Indications_item(9, R.drawable.ic_pediatric,  indicationsNames.get(9),fragmentsNames.get(9)));
+                items.add(new Indications_item(10, R.drawable.ic_pediatric,  indicationsNames.get(10),fragmentsNames.get(10)));
+                items.add(new Indications_item(11, R.drawable.ic_pediatric,  indicationsNames.get(11),fragmentsNames.get(11)));
+                items.add(new Indications_item(13, R.drawable.ic_pediatric,  indicationsNames.get(13),fragmentsNames.get(13)));
+                items.add(new Indications_item(15, R.drawable.ic_pediatric,  indicationsNames.get(15),fragmentsNames.get(15)));
                 break;
         }
 

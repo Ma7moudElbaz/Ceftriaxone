@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.cat.ceftriaxone.MainActivity;
 import com.cat.ceftriaxone.R;
 
 import java.util.ArrayList;
@@ -46,6 +47,9 @@ public class Indications_adapter extends RecyclerView.Adapter<Indications_adapte
         holder.parent_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MainActivity activity = (MainActivity) mContext;
+                String fragmentName = "Indication_"+items.get(position).getId();
+                activity.setContentFragment(items.get(position).getFragment(),fragmentName);
 
             }
         });

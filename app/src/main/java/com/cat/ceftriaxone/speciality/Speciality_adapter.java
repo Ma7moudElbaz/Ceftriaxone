@@ -54,8 +54,6 @@ public class Speciality_adapter extends RecyclerView.Adapter<Speciality_adapter.
             public void onClick(View view) {
                 MainActivity activity = (MainActivity) mContext;
                 activity.setContentFragment(new Speciality_indications_fragment(items.get(position).getId()),"Speciality_indications_fragment");
-
-
             }
         });
 
