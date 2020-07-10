@@ -12,13 +12,14 @@ import android.view.ViewGroup;
 
 import com.cat.ceftriaxone.R;
 
-public class Indication_4 extends Fragment {
+
+public class Indication_2_adult extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_indications_4, container, false);
+        return inflater.inflate(R.layout.fragment_indication_2_adult, container, false);
     }
 
     @Override

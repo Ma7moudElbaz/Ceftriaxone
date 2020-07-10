@@ -13,5 +13,9 @@
     <color name="white">#fff</color>
     <color name="gray">#BFC2C2C2</color>
     <color name="black">#000000</color>
+    <color name="black_text">#000000</color>
+    <color name="gray_text">#7F7F7F</color>
+    <color name="blue_text">#094F85</color>
+    <color name="indication_bottom_bg">#F2F2F2</color>
     <color name="transparent">#00ffffff</color>
 </resources>

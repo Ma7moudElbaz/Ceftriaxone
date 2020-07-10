@@ -10,9 +10,9 @@ import com.cat.ceftriaxone.speciality.indications.Indication_14;
 import com.cat.ceftriaxone.speciality.indications.Indication_15;
 import com.cat.ceftriaxone.speciality.indications.Indication_1_adult;
 import com.cat.ceftriaxone.speciality.indications.Indication_1_ped;
-import com.cat.ceftriaxone.speciality.indications.Indication_2;
-import com.cat.ceftriaxone.speciality.indications.Indication_3;
-import com.cat.ceftriaxone.speciality.indications.Indication_4;
+import com.cat.ceftriaxone.speciality.indications.Indication_2_adult;
+import com.cat.ceftriaxone.speciality.indications.Indication_3_adult;
+import com.cat.ceftriaxone.speciality.indications.Indication_4_adult;
 import com.cat.ceftriaxone.speciality.indications.Indication_5;
 import com.cat.ceftriaxone.speciality.indications.Indication_6;
 import com.cat.ceftriaxone.speciality.indications.Indication_7;
@@ -34,9 +34,9 @@ public class Indications_fragment_names {
 
     private void setFragmentsNames_adult(){
         fragmentsNames_adult.put(1, new Indication_1_adult());
-        fragmentsNames_adult.put(2, new Indication_2());
-        fragmentsNames_adult.put(3, new Indication_3());
-        fragmentsNames_adult.put(4, new Indication_4());
+        fragmentsNames_adult.put(2, new Indication_2_adult());
+        fragmentsNames_adult.put(3, new Indication_3_adult());
+        fragmentsNames_adult.put(4, new Indication_4_adult());
         fragmentsNames_adult.put(5, new Indication_5());
         fragmentsNames_adult.put(6, new Indication_6());
         fragmentsNames_adult.put(7, new Indication_7());
@@ -53,9 +53,9 @@ public class Indications_fragment_names {
 
     private void setFragmentsNames_ped(){
         fragmentsNames_ped.put(1, new Indication_1_ped());
-        fragmentsNames_ped.put(2, new Indication_2());
-        fragmentsNames_ped.put(3, new Indication_3());
-        fragmentsNames_ped.put(4, new Indication_4());
+        fragmentsNames_ped.put(2, new Indication_2_adult());
+        fragmentsNames_ped.put(3, new Indication_3_adult());
+        fragmentsNames_ped.put(4, new Indication_4_adult());
         fragmentsNames_ped.put(5, new Indication_5());
         fragmentsNames_ped.put(6, new Indication_6());
         fragmentsNames_ped.put(7, new Indication_7());

@@ -1,5 +1,6 @@
 package com.cat.ceftriaxone.speciality.indications;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,8 +12,13 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.cat.ceftriaxone.R;
+import com.cat.ceftriaxone.speciality.Indications_fragment_names;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Indication_container extends Fragment {
@@ -34,10 +40,58 @@ public class Indication_container extends Fragment {
     }
 
 
+    RelativeLayout adult_tab,ped_tab;
+     Map<Integer, Fragment> fragmentsNames_adult,fragmentsNames_ped;
+
+    int indicationId;
+
+    public Indication_container(int indicationId) {
+        // Required empty public constructor
+        this.indicationId = indicationId;
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        setContentFragment(new Indication_1_adult());
+
+
+        adult_tab = view.findViewById(R.id.adults_tab);
+        ped_tab = view.findViewById(R.id.ped_tab);
+
+        Indications_fragment_names fragment_names = new Indications_fragment_names();
+        fragmentsNames_adult = fragment_names.getFragmentsNames_adult();
+        fragmentsNames_ped =fragment_names.getFragmentsNames_ped();
+
+
+
+        gotoAdult();
+
+        adult_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoAdult();
+            }
+        });
+
+        ped_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoPed();
+            }
+        });
+
+    }
+
+    private void gotoAdult(){
+        setContentFragment(fragmentsNames_adult.get(indicationId));
+        adult_tab.setBackgroundResource(R.drawable.active_tab_bg);
+        ped_tab.setBackgroundResource(R.drawable.inactive_tab_bg);
+    }
+
+    private void gotoPed(){
+        setContentFragment(fragmentsNames_ped.get(indicationId));
+        adult_tab.setBackgroundResource(R.drawable.inactive_tab_bg);
+        ped_tab.setBackgroundResource(R.drawable.active_tab_bg);
     }
 }

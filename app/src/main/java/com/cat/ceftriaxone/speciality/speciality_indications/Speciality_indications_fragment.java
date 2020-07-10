@@ -14,11 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cat.ceftriaxone.R;
-import com.cat.ceftriaxone.speciality.Indications_fragment_names;
 import com.cat.ceftriaxone.speciality.Indications_names;
-import com.cat.ceftriaxone.speciality.indications.Indication_2;
-import com.cat.ceftriaxone.speciality.indications.Indication_3;
-import com.cat.ceftriaxone.speciality.indications.Indication_4;
 
 import java.util.ArrayList;
 import java.util.Map;

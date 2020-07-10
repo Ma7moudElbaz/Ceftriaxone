@@ -49,7 +49,7 @@ public class Indications_adapter extends RecyclerView.Adapter<Indications_adapte
             @Override
             public void onClick(View view) {
                 MainActivity activity = (MainActivity) mContext;
-                activity.setContentFragment(new Indication_container(),"Indication Container");
+                activity.setContentFragment(new Indication_container(items.get(position).getId()),"Indication Container");
 
             }
         });
