@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.cat.ceftriaxone.DetailsDialog;
 import com.cat.ceftriaxone.R;
 
 public class Indication_04_adult extends Fragment {
@@ -32,10 +33,9 @@ public class Indication_04_adult extends Fragment {
          info.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 new AlertDialog.Builder(getActivity())
-                    .setMessage("Limited data suggest that If the patient is severely ill or the previous therapy has failed, Ceftriaxone may be effective when given for 3 days.")
 
-                    .show();
+                 new DetailsDialog("Limited data suggest that If the patient is severely ill or the previous therapy has failed, Ceftriaxone may be effective when given for 3 days.").
+                         show(getFragmentManager(), "dialog");
              }
          });
     }

@@ -89,6 +89,7 @@ of age (≥50 kg):"
                 android:layout_marginStart="10dp"/>
 
             <ImageView
+                android:id="@+id/info1"
                 android:layout_width="30dp"
                 android:layout_height="24dp"
                 android:layout_gravity="center"
@@ -185,6 +186,7 @@ recommended range should be considered."
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -293,6 +295,7 @@ of age (≥50 kg):"
                     android:layout_marginStart="10dp"/>
 
                 <ImageView
+                    android:id="@+id/info2"
                     android:layout_width="30dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
@@ -370,6 +373,7 @@ of age (≥50 kg):"
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/prev"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
