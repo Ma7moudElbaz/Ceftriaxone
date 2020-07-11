@@ -42,15 +42,21 @@ of age (≥50 kg):"
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/indication_bottom_bg"
-        android:layout_marginTop="20dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:paddingTop="20dp"
-        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/indication_bottom_bg"
+            android:layout_marginTop="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="30dp"
+            android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -200,6 +206,8 @@ recommended range should be considered."
 
     </LinearLayout>
 
+        </ScrollView>
+
     </LinearLayout>
 
 
@@ -238,6 +246,10 @@ of age (≥50 kg):"
         </LinearLayout>
 
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -247,6 +259,7 @@ of age (≥50 kg):"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:paddingTop="20dp"
+            android:paddingBottom="30dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -380,6 +393,8 @@ of age (≥50 kg):"
             </LinearLayout>
 
         </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 

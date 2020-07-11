@@ -32,6 +32,11 @@
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
 
 
     <LinearLayout
@@ -42,6 +47,7 @@
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:paddingTop="20dp"
+        android:paddingBottom="30dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -131,5 +137,7 @@ recommended range should be considered."
 
 
     </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
