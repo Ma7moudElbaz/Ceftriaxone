@@ -192,7 +192,7 @@ children should not exceed 5 mg/kg."
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="For obese children, the maximum dose should be
-calculated based on ideal bodyweight for theirgender and age."
+calculated based on ideal bodyweight for their gender and age."
                 android:textColor="@color/gray_text"
                 android:textSize="@dimen/text_gray_s" />
 
