@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment;
 public class Indications_item {
     private int id,img;
     private String title;
+    boolean isPed;
 
-    public Indications_item(int id, int img, String title) {
+    public Indications_item(int id, int img, String title, boolean isPed) {
         this.id = id;
         this.img = img;
         this.title = title;
+        this.isPed = isPed;
     }
 
     public int getId() {
@@ -36,5 +38,11 @@ public class Indications_item {
         this.title = title;
     }
 
+    public boolean isPed() {
+        return isPed;
+    }
 
+    public void setPed(boolean ped) {
+        isPed = ped;
+    }
 }

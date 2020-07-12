@@ -58,53 +58,53 @@ public class Speciality_indications_fragment extends Fragment {
 
         switch (specialityId){
             case 1:
-                items.add(new Indications_item(1, R.drawable.ic_chest, indicationsNames.get(1)));
-                items.add(new Indications_item(2, R.drawable.ic_chest,  indicationsNames.get(2)));
-                items.add(new Indications_item(3, R.drawable.ic_chest,  indicationsNames.get(3)));
+                items.add(new Indications_item(1, R.drawable.ic_chest, indicationsNames.get(1),false));
+                items.add(new Indications_item(2, R.drawable.ic_chest,  indicationsNames.get(2),false));
+                items.add(new Indications_item(3, R.drawable.ic_chest,  indicationsNames.get(3),false));
                 break;
 
             case 2:
-                items.add(new Indications_item(4, R.drawable.ic_ent,  indicationsNames.get(4)));
+                items.add(new Indications_item(4, R.drawable.ic_ent,  indicationsNames.get(4),false));
                 break;
 
             case 3:
-                items.add(new Indications_item(5, R.drawable.ic_surgeon,  indicationsNames.get(5)));
-                items.add(new Indications_item(6, R.drawable.ic_surgeon,  indicationsNames.get(6)));
+                items.add(new Indications_item(5, R.drawable.ic_surgeon,  indicationsNames.get(5),false));
+                items.add(new Indications_item(6, R.drawable.ic_surgeon,  indicationsNames.get(6),false));
                 break;
 
             case 4:
-                items.add(new Indications_item(1, R.drawable.ic_im_gp,  indicationsNames.get(1)));
-                items.add(new Indications_item(3, R.drawable.ic_im_gp,  indicationsNames.get(3)));
-                items.add(new Indications_item(4, R.drawable.ic_im_gp,  indicationsNames.get(4)));
-                items.add(new Indications_item(7, R.drawable.ic_im_gp,  indicationsNames.get(7)));
-                items.add(new Indications_item(5, R.drawable.ic_im_gp,  indicationsNames.get(5)));
-                items.add(new Indications_item(8, R.drawable.ic_im_gp,  indicationsNames.get(8)));
-                items.add(new Indications_item(9, R.drawable.ic_im_gp,  indicationsNames.get(9)));
-                items.add(new Indications_item(10, R.drawable.ic_im_gp,  indicationsNames.get(10)));
-                items.add(new Indications_item(11, R.drawable.ic_im_gp,  indicationsNames.get(11)));
-                items.add(new Indications_item(12, R.drawable.ic_im_gp,  indicationsNames.get(12)));
+                items.add(new Indications_item(1, R.drawable.ic_im_gp,  indicationsNames.get(1),false));
+                items.add(new Indications_item(3, R.drawable.ic_im_gp,  indicationsNames.get(3),false));
+                items.add(new Indications_item(4, R.drawable.ic_im_gp,  indicationsNames.get(4),false));
+                items.add(new Indications_item(7, R.drawable.ic_im_gp,  indicationsNames.get(7),false));
+                items.add(new Indications_item(5, R.drawable.ic_im_gp,  indicationsNames.get(5),false));
+                items.add(new Indications_item(8, R.drawable.ic_im_gp,  indicationsNames.get(8),false));
+                items.add(new Indications_item(9, R.drawable.ic_im_gp,  indicationsNames.get(9),false));
+                items.add(new Indications_item(10, R.drawable.ic_im_gp,  indicationsNames.get(10),false));
+                items.add(new Indications_item(11, R.drawable.ic_im_gp,  indicationsNames.get(11),false));
+                items.add(new Indications_item(12, R.drawable.ic_im_gp,  indicationsNames.get(12),false));
                 break;
 
             case 5:
-                items.add(new Indications_item(13, R.drawable.ic_urology,  indicationsNames.get(13)));
-                items.add(new Indications_item(14, R.drawable.ic_urology,  indicationsNames.get(14)));
-                items.add(new Indications_item(15, R.drawable.ic_urology,  indicationsNames.get(15)));
+                items.add(new Indications_item(13, R.drawable.ic_urology,  indicationsNames.get(13),false));
+                items.add(new Indications_item(14, R.drawable.ic_urology,  indicationsNames.get(14),false));
+                items.add(new Indications_item(15, R.drawable.ic_urology,  indicationsNames.get(15),false));
                 break;
 
             case 6:
-                items.add(new Indications_item(1, R.drawable.ic_pediatric,  indicationsNames.get(1)));
-                items.add(new Indications_item(2, R.drawable.ic_pediatric,  indicationsNames.get(2)));
-                items.add(new Indications_item(4, R.drawable.ic_pediatric,  indicationsNames.get(4)));
-                items.add(new Indications_item(5, R.drawable.ic_pediatric,  indicationsNames.get(5)));
-                items.add(new Indications_item(6, R.drawable.ic_pediatric,  indicationsNames.get(6)));
-                items.add(new Indications_item(12, R.drawable.ic_pediatric,  indicationsNames.get(12)));
-                items.add(new Indications_item(7, R.drawable.ic_pediatric,  indicationsNames.get(7)));
-                items.add(new Indications_item(8, R.drawable.ic_pediatric,  indicationsNames.get(8)));
-                items.add(new Indications_item(9, R.drawable.ic_pediatric,  indicationsNames.get(9)));
-                items.add(new Indications_item(10, R.drawable.ic_pediatric,  indicationsNames.get(10)));
-                items.add(new Indications_item(11, R.drawable.ic_pediatric,  indicationsNames.get(11)));
-                items.add(new Indications_item(13, R.drawable.ic_pediatric,  indicationsNames.get(13)));
-                items.add(new Indications_item(15, R.drawable.ic_pediatric,  indicationsNames.get(15)));
+                items.add(new Indications_item(1, R.drawable.ic_pediatric,  indicationsNames.get(1),true));
+                items.add(new Indications_item(2, R.drawable.ic_pediatric,  indicationsNames.get(2),true));
+                items.add(new Indications_item(4, R.drawable.ic_pediatric,  indicationsNames.get(4),true));
+                items.add(new Indications_item(5, R.drawable.ic_pediatric,  indicationsNames.get(5),true));
+                items.add(new Indications_item(6, R.drawable.ic_pediatric,  indicationsNames.get(6),true));
+                items.add(new Indications_item(12, R.drawable.ic_pediatric,  indicationsNames.get(12),true));
+                items.add(new Indications_item(7, R.drawable.ic_pediatric,  indicationsNames.get(7),true));
+                items.add(new Indications_item(8, R.drawable.ic_pediatric,  indicationsNames.get(8),true));
+                items.add(new Indications_item(9, R.drawable.ic_pediatric,  indicationsNames.get(9),true));
+                items.add(new Indications_item(10, R.drawable.ic_pediatric,  indicationsNames.get(10),true));
+                items.add(new Indications_item(11, R.drawable.ic_pediatric,  indicationsNames.get(11),true));
+                items.add(new Indications_item(13, R.drawable.ic_pediatric,  indicationsNames.get(13),true));
+                items.add(new Indications_item(15, R.drawable.ic_pediatric,  indicationsNames.get(15),true));
                 break;
         }
 

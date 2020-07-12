@@ -44,10 +44,11 @@ public class Indication_container extends Fragment {
      Map<Integer, Fragment> fragmentsNames_adult,fragmentsNames_ped;
 
     int indicationId;
+    boolean isPed;
 
-    public Indication_container(int indicationId) {
-        // Required empty public constructor
+    public Indication_container(int indicationId , boolean isPed) {
         this.indicationId = indicationId;
+        this.isPed = isPed;
     }
 
     @Override
@@ -64,8 +65,12 @@ public class Indication_container extends Fragment {
         fragmentsNames_ped =fragment_names.getFragmentsNames_ped();
 
 
-
-        gotoAdult();
+        setTabs();
+        if (isPed){
+            gotoPed();
+        }else {
+            gotoAdult();
+        }
 
         adult_tab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +85,13 @@ public class Indication_container extends Fragment {
                 gotoPed();
             }
         });
+
+    }
+
+    private void setTabs(){
+        if (indicationId == 3 || indicationId == 14){
+            ped_tab.setVisibility(View.GONE);
+        }
 
     }
 
