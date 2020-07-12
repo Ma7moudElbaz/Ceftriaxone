@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="*Bacterial Meningitis:"
+            android:text="*Bacterial Endocarditis:"
             android:textColor="@color/blue_text"
             android:textSize="@dimen/text_blue"
             android:textStyle="bold" />
@@ -185,15 +185,6 @@ calculated based on ideal bodyweight for their gender and age."
                 android:textColor="@color/gray_text"
                 android:textSize="@dimen/text_gray_s" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="The maximum single dose of lidocaine in children shouldn't exceed 5mg/Kg"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_gray_s" />
 
             <ImageView
                 android:id="@+id/next"
@@ -205,6 +196,17 @@ calculated based on ideal bodyweight for their gender and age."
                 android:padding="5dp"
                 android:src="@drawable/ic_next"
                 android:tint="@color/white" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="The maximum single dose of lidocaine in children shouldn't exceed 5mg/Kg"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_gray_s" />
         </LinearLayout>
 
     </ScrollView>
