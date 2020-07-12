@@ -4,5 +4,6 @@
     <dimen name="text_gray">18sp</dimen>
     <dimen name="text_gray_s">16sp</dimen>
     <dimen name="text_black">20sp</dimen>
+    <dimen name="text_brown">20sp</dimen>
 
 </resources>
