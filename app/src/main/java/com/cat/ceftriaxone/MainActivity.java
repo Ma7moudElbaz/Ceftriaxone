@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 //        navigateToSpeciality();
         setContentFragment(new Speciality_fragment(), "");
-
+        navigationView.setItemIconTintList(null);
     }
 
 
