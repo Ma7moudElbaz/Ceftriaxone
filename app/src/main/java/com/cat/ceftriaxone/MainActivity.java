@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void setIndicationsColors() {
-        navigationView.setCheckedItem(R.id.nav_speciality);
+        navigationView.setCheckedItem(R.id.nav_indications);
         setBottomNavSelected(btm_nav_indications);
     }
 

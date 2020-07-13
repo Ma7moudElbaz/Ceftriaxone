@@ -232,7 +232,8 @@ calculated based on ideal bodyweight for their gender and age."
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:visibility="gone">
 
 
         <LinearLayout
@@ -243,8 +244,7 @@ calculated based on ideal bodyweight for their gender and age."
             android:paddingStart="10dp"
             android:paddingTop="20dp"
             android:paddingEnd="10dp"
-            android:paddingBottom="20dp"
-            android:visibility="gone">
+            android:paddingBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
