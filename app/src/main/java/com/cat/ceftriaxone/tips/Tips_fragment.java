@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import com.cat.ceftriaxone.MainActivity;
 import com.cat.ceftriaxone.R;
@@ -24,11 +26,23 @@ public class Tips_fragment extends Fragment {
         return inflater.inflate(R.layout.tips_fragment, container, false);
     }
 
+    WebView webView;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
         activity.setTipsColors();
+
+        webView = view.findViewById(R.id.webView);
+
+        WebSettings webSetting = webView.getSettings();
+        webSetting.setBuiltInZoomControls(true);
+        webSetting.setDisplayZoomControls(false);
+        webSetting.setLoadWithOverviewMode(true);
+//        webSetting.setUseWideViewPort(true);
+
+
+        webView.loadUrl("file:///android_asset/html/tips.html");
 
     }
 }

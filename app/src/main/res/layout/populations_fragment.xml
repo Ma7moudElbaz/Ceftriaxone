@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".populations.Populations_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Populations" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/population_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/population1"
+            android:background="@drawable/inactive_population_tab"
+            android:adjustViewBounds="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/population_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/population2"
+            android:background="@drawable/inactive_population_tab"
+            android:adjustViewBounds="true"
+            android:layout_marginStart="2dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/population_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/population3"
+            android:background="@drawable/inactive_population_tab"
+            android:adjustViewBounds="true"
+            android:layout_marginStart="2dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/population_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/population4"
+            android:background="@drawable/inactive_population_tab"
+            android:adjustViewBounds="true"
+            android:layout_marginStart="2dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

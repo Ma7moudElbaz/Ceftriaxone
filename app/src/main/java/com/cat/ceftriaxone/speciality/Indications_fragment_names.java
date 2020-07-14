@@ -85,15 +85,11 @@ public class Indications_fragment_names {
         return fragmentsNames_adult;
     }
 
-    public void setFragmentsNames_adult(Map<Integer, Fragment> fragmentsNames_adult) {
-        this.fragmentsNames_adult = fragmentsNames_adult;
-    }
+
 
     public Map<Integer, Fragment> getFragmentsNames_ped() {
         return fragmentsNames_ped;
     }
 
-    public void setFragmentsNames_ped(Map<Integer, Fragment> fragmentsNames_ped) {
-        this.fragmentsNames_ped = fragmentsNames_ped;
-    }
+
 }
