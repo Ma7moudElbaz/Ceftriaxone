@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:background="@color/indications_item_bg"
     android:orientation="horizontal"
-    android:padding="5dp"
     android:layout_marginBottom="10dp">
 
     <RelativeLayout
@@ -17,10 +16,10 @@
 
     <ImageView
         android:id="@+id/indications_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:adjustViewBounds="true"
-        android:padding="3dp"
+        android:padding="5dp"
         android:src="@drawable/ic_chest" />
 
     <RelativeLayout
@@ -36,7 +35,7 @@
             android:layout_toStartOf="@id/arrow"
             android:maxLines="3"
             android:minLines="3"
-            android:text="Kuwait’s Planned Mega Project to Spur USD 200 Bn Foreign Investment"
+            android:text="Kuwait’s ned Mega Project to Spur USD 200 Bn Foreined Mega Project to Spur USD 200 Bn Forei Planned Mega Project to Spur USD 200 Bn Foreign Investment"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:layout_centerVertical="true"
