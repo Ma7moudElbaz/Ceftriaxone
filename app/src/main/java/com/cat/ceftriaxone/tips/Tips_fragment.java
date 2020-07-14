@@ -32,6 +32,7 @@ public class Tips_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
         activity.setTipsColors();
+        activity.setHome(false);
 
         webView = view.findViewById(R.id.webView);
 

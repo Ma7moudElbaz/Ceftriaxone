@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.cat.ceftriaxone.MainActivity;
 import com.cat.ceftriaxone.R;
 import com.cat.ceftriaxone.speciality.Indications_fragment_names;
 
@@ -55,6 +56,9 @@ public class Indication_container extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        MainActivity activity = (MainActivity) getActivity();
+        activity.setSpecialityColors();
+        activity.setHome(false);
 
 
         adult_tab = view.findViewById(R.id.adults_tab);

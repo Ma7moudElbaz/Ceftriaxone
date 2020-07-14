@@ -43,6 +43,7 @@ public class Indications_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
         activity.setIndicationsColors();
+        activity.setHome(false);
 
         items = new ArrayList<>();
         setIndicationsItems();

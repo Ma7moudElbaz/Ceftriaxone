@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Menu nav_Menu;
     boolean isHome = true;
 
+    public void setHome(boolean home) {
+        isHome = home;
+    }
+
     ImageView btm_nav_speciality, btm_nav_indications, btm_nav_products, btm_nav_populations, btm_nav_contraindications, btm_nav_tips, btm_nav_pi;
 
 
@@ -152,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void navigateToSpeciality() {
         setContentFragment(new Speciality_fragment(), "Speciality_fragment");
         setSpecialityColors();
-        isHome = true;
     }
 
     public void setSpecialityColors() {
@@ -165,7 +168,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void navigateToIndications() {
         setContentFragment(new Indications_fragment(), "Indications_fragment");
         setIndicationsColors();
-        isHome = false;
     }
 
     public void setIndicationsColors() {
@@ -177,7 +179,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void navigateToProducts() {
         setContentFragment(new Products_fragment(), "Products_fragment");
         setProductsColors();
-        isHome = false;
     }
 
     public void setProductsColors() {
@@ -189,7 +190,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void navigateToPopulation() {
         setContentFragment(new Populations_fragment(), "Populations_fragment");
         setPopulationsColors();
-        isHome = false;
     }
 
     public void setPopulationsColors() {
@@ -201,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void navigateToContraindications() {
         setContentFragment(new Contraindications_fragment(), "Contraindications_fragment");
         setContraindicationsColors();
-        isHome = false;
     }
 
     public void setContraindicationsColors() {
@@ -213,7 +212,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void navigateToTips() {
         setContentFragment(new Tips_fragment(), "Tips_fragment");
         setTipsColors();
-        isHome = false;
     }
 
     public void setTipsColors(){
@@ -225,7 +223,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void navigateToPI() {
         setContentFragment(new PI_fragment(), "PI_fragment");
         setPiColors();
-        isHome = false;
     }
     public void setPiColors(){
         navigationView.setCheckedItem(R.id.nav_pi);

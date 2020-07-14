@@ -40,6 +40,7 @@ public class Speciality_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
         activity.setSpecialityColors();
+        activity.setHome(true);
 
 
         items = new ArrayList<>();

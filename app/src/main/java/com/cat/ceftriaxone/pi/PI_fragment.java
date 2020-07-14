@@ -32,6 +32,7 @@ public class PI_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
         activity.setPiColors();
+        activity.setHome(false);
 
         webView = view.findViewById(R.id.webView);
 
