@@ -57,8 +57,7 @@ public class Indication_container extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         MainActivity activity = (MainActivity) getActivity();
-        activity.setSpecialityColors();
-        activity.setHome(false);
+        activity.setHome(2);
 
 
         adult_tab = view.findViewById(R.id.adults_tab);

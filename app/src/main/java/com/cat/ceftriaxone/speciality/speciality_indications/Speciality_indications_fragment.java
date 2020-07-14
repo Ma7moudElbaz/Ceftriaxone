@@ -45,8 +45,7 @@ public class Speciality_indications_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         MainActivity activity = (MainActivity) getActivity();
-        activity.setSpecialityColors();
-        activity.setHome(false);
+        activity.setHome(2);
 
         items = new ArrayList<>();
         setIndicationsItems();

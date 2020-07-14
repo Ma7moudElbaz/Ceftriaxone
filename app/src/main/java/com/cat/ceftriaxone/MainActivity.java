@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ImageView menuIcon;
     DrawerLayout drawer;
     Menu nav_Menu;
-    boolean isHome = true;
+    int isHome = 1;
 
-    public void setHome(boolean home) {
+    public void setHome(int home) {
         isHome = home;
     }
 
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.END)) {
             drawer.closeDrawer(GravityCompat.END);
-        } else if (isHome){
+        } else if (isHome == 1){
             new AlertDialog.Builder(MainActivity.this)
                     .setTitle("Are you sure you want to exit ? ")
 //                    .setMessage("You have to login first")
@@ -247,9 +247,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .setNegativeButton("Dismiss", null)
                     .show();
         }
-        else {
+        else if (isHome == 2){
             super.onBackPressed();
         }
+        else {
+            navigateToSpeciality();
+        }
+
     }
 
 

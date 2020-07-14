@@ -32,7 +32,7 @@ public class Products_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
         activity.setProductsColors();
-        activity.setHome(false);
+        activity.setHome(0);
 
         webView = view.findViewById(R.id.webView);
 
