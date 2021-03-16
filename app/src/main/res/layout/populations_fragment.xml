@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="10dp"
         android:weightSum="4">
 
         <ImageView
@@ -17,65 +18,62 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/population1"
-            android:background="@drawable/inactive_population_tab"
             android:adjustViewBounds="true"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:background="@drawable/inactive_population_tab"
+            android:paddingLeft="20dp"
             android:paddingTop="5dp"
-            android:paddingBottom="5dp"/>
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/population1" />
 
         <ImageView
             android:id="@+id/population_2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:src="@drawable/population2"
-            android:background="@drawable/inactive_population_tab"
             android:adjustViewBounds="true"
-            android:layout_marginStart="2dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:background="@drawable/inactive_population_tab"
+            android:paddingLeft="20dp"
             android:paddingTop="5dp"
-            android:paddingBottom="5dp"/>
-
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/population2" />
 
 
         <ImageView
             android:id="@+id/population_3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:src="@drawable/population3"
-            android:background="@drawable/inactive_population_tab"
             android:adjustViewBounds="true"
-            android:layout_marginStart="2dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:background="@drawable/inactive_population_tab"
+            android:paddingLeft="20dp"
             android:paddingTop="5dp"
-            android:paddingBottom="5dp"/>
-
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/population3" />
 
 
         <ImageView
             android:id="@+id/population_4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:src="@drawable/population4"
-            android:background="@drawable/inactive_population_tab"
             android:adjustViewBounds="true"
-            android:layout_marginStart="2dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:background="@drawable/inactive_population_tab"
+            android:paddingLeft="20dp"
             android:paddingTop="10dp"
-            />
+            android:paddingRight="20dp"
+            android:src="@drawable/population4" />
 
     </LinearLayout>
 
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
