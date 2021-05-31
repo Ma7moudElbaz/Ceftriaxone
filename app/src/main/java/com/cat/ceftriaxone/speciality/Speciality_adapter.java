@@ -53,6 +53,7 @@ public class Speciality_adapter extends RecyclerView.Adapter<Speciality_adapter.
             @Override
             public void onClick(View view) {
                 MainActivity activity = (MainActivity) mContext;
+                if (items.get(position).getId()!=6)
                 activity.setContentFragment(new Speciality_indications_fragment(items.get(position).getId()),"Speciality_indications_fragment");
             }
         });

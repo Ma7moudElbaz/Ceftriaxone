@@ -2,7 +2,6 @@ package com.cat.ceftriaxone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -117,8 +116,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
-        SideNavigationHandler handler = new SideNavigationHandler(getBaseContext(), id);
-        handler.navigate();
+//        SideNavigationHandler handler = new SideNavigationHandler(getBaseContext(), id);
+//        handler.navigate();
 
         if (id == R.id.nav_speciality) {
             navigateToSpeciality();

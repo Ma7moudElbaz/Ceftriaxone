@@ -92,9 +92,13 @@ public class Indication_container extends Fragment {
     }
 
     private void setTabs(){
-        if (indicationId == 3 || indicationId == 14){
-            ped_tab.setVisibility(View.GONE);
-        }
+        //to remove ped tab
+        ped_tab.setVisibility(View.GONE);
+
+        //normal app ped tab in all except 3 &14
+//        if (indicationId == 3 || indicationId == 14){
+//            ped_tab.setVisibility(View.GONE);
+//        }
 
     }
 
