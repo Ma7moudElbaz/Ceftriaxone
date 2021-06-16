@@ -9,9 +9,13 @@
     <LinearLayout
         android:id="@+id/tabs_container"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="55dp"
         android:orientation="horizontal"
-        android:weightSum="2">
+        android:weightSum="2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/inactive_tab_bg">
 
         <RelativeLayout
             android:id="@+id/adults_tab"
@@ -57,6 +61,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tabs_container"
-        android:paddingTop="20dp"/>
+        android:paddingTop="10dp"/>
 
 </RelativeLayout>
