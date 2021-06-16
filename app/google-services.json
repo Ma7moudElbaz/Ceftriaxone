@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "648894926852",
+    "project_id": "ceftriaxone-35fa5",
+    "storage_bucket": "ceftriaxone-35fa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648894926852:android:1f429d0676ed4947dde551",
+        "android_client_info": {
+          "package_name": "com.cat.ceftriaxone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648894926852-egss49l3gaan3i913pv2s2kp0tr7cve9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGEJ9LU3MbBGtwqOn359xFSjDGc1xytpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648894926852-egss49l3gaan3i913pv2s2kp0tr7cve9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

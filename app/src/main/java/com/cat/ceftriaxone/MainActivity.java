@@ -25,6 +25,8 @@ import com.cat.ceftriaxone.products.Products_fragment;
 import com.cat.ceftriaxone.speciality.Speciality_fragment;
 import com.cat.ceftriaxone.tips.Tips_fragment;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         btm_nav_speciality = findViewById(R.id.btm_nav_speciality);
         btm_nav_indications = findViewById(R.id.btm_nav_indications);
@@ -91,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        navigateToSpeciality();
         setContentFragment(new Speciality_fragment(), "");
         navigationView.setItemIconTintList(null);
+
     }
 
 

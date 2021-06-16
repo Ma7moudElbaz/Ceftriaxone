@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -203,7 +204,7 @@ recommended range should be considered."
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_next"
-                android:tint="@color/blue_text"/>
+                app:tint="@color/blue_text" />
         </LinearLayout>
 
     </LinearLayout>
@@ -386,12 +387,12 @@ of age (≥50 kg):"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_prev"
-                    android:tint="@color/blue_text"/>
+                    app:tint="@color/blue_text" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Neurosyphilis"
+                    android:text="Syphilis"
                     android:textColor="@color/blue_text"
                     android:textSize="@dimen/text_gray"/>
             </LinearLayout>

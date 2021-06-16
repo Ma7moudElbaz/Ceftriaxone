@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -203,7 +204,7 @@ calculated based on ideal bodyweight for their gender and age."
                 android:background="@drawable/blue_curved"
                 android:padding="5dp"
                 android:src="@drawable/ic_next"
-                android:tint="@color/white" />
+                app:tint="@color/white" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -331,7 +332,7 @@ calculated based on ideal bodyweight for their gender and age."
                 android:background="@drawable/blue_curved"
                 android:padding="5dp"
                 android:src="@drawable/ic_prev"
-                android:tint="@color/white" />
+                app:tint="@color/white" />
         </LinearLayout>
 
     </ScrollView>

@@ -52,7 +52,7 @@ public class Indication_04_ped extends Fragment {
 
         minDosage = 0;
         maxDosage = 50;
-        dosageTxt = minDosage + "-" + maxDosage;
+        dosageTxt = String.valueOf(maxDosage);
         indicationDosage.setText(dosageTxt);
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +86,7 @@ public class Indication_04_ped extends Fragment {
 
         if (currentDosage.length() == 0 || currentWeight.length() == 0) {
             Toast.makeText(getActivity(), "Please fill all fields", Toast.LENGTH_SHORT).show();
-        } else if (Integer.parseInt(currentDosage) < minDosage || Integer.parseInt(currentDosage) > maxDosage) {
+        } else if (Integer.parseInt(currentDosage) != maxDosage) {
             Toast.makeText(getActivity(), "Dosage should Be "+dosageTxt, Toast.LENGTH_SHORT).show();
 
         } else {
