@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/tabs_container"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:weightSum="2"
         android:layout_marginLeft="30dp"
@@ -25,6 +25,7 @@
             android:background="@drawable/active_tab_bg">
 
             <TextView
+                android:id="@+id/adults_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -43,12 +44,12 @@
             android:background="@drawable/inactive_tab_bg">
 
             <TextView
+                android:id="@+id/ped_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textColor="@color/white"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 android:text="Pediatrics"/>
 
         </RelativeLayout>

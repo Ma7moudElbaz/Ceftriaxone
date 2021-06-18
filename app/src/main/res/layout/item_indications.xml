@@ -4,53 +4,64 @@
     android:id="@+id/parent_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/indications_item_bg"
-    android:orientation="horizontal"
-    android:layout_marginBottom="10dp">
+    android:orientation="horizontal">
 
-    <RelativeLayout
-        android:layout_width="5dp"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"/>
-
-
-    <ImageView
-        android:id="@+id/indications_img"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:adjustViewBounds="true"
-        android:padding="5dp"
-        android:src="@drawable/ic_chest" />
-
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp">
 
-        <TextView
-            android:id="@+id/indications_title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toStartOf="@id/arrow"
-            android:maxLines="3"
-            android:minLines="3"
-            android:text="Kuwait’s ned Mega Project to Spur USD 200 Bn Foreined Mega Project to Spur USD 200 Bn Forei Planned Mega Project to Spur USD 200 Bn Foreign Investment"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_centerVertical="true"
-            android:gravity="center_vertical"/>
-
-        <ImageView
-            android:id="@+id/arrow"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ic_arrow" />
-
-    </RelativeLayout>
+            android:orientation="horizontal">
 
 
+            <ImageView
+                android:id="@+id/indications_img"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_chest" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:id="@+id/indications_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/arrow"
+                    android:gravity="center_vertical"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:text="Kuwait’s ned Mega Project to Spur USD 200 Bn Foreined Mega Project to Spur USD 200 Bn Forei Planned Mega Project to Spur USD 200 Bn Foreign Investment"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/arrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_arrow_forward"
+                    app:tint="@color/colorAccent" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
