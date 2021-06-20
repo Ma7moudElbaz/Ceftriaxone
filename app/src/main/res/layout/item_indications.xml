@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="40dp"
+        app:cardCornerRadius="35dp"
         app:cardElevation="5dp"
         android:layout_margin="10dp">
 
@@ -21,15 +21,15 @@
 
             <ImageView
                 android:id="@+id/indications_img"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ic_chest" />
+                android:src="@drawable/ic_chest_indications" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="5dp"
+                android:paddingLeft="10dp"
                 android:paddingRight="15dp">
 
                 <TextView

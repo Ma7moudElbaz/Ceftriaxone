@@ -14,8 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_chest"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             android:adjustViewBounds="true"/>
 
 

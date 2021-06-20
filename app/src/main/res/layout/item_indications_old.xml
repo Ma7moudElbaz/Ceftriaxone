@@ -47,7 +47,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_arrow" />
+            android:src="@drawable/ic_arrow_forward" />
 
     </RelativeLayout>
 

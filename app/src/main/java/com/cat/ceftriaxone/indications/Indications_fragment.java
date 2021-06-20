@@ -59,21 +59,21 @@ public class Indications_fragment extends Fragment {
         Indications_names names = new Indications_names();
         Map<Integer, String> indicationsNames = names.getNames();
 
-        items.add(new Indications_item(3, R.drawable.ic_chest, indicationsNames.get(3),false));
-        items.add(new Indications_item(4, R.drawable.ic_ent, indicationsNames.get(4),false));
-        items.add(new Indications_item(9, R.drawable.ic_im_gp, indicationsNames.get(9),false));
-        items.add(new Indications_item(10, R.drawable.ic_im_gp, indicationsNames.get(10),false));
-        items.add(new Indications_item(1, R.drawable.ic_chest, indicationsNames.get(1),false));
-        items.add(new Indications_item(13, R.drawable.ic_urology, indicationsNames.get(13),false));
-        items.add(new Indications_item(5, R.drawable.ic_surgeon, indicationsNames.get(5),false));
-        items.add(new Indications_item(12, R.drawable.ic_im_gp, indicationsNames.get(12),false));
-        items.add(new Indications_item(14, R.drawable.ic_urology, indicationsNames.get(14),false));
-        items.add(new Indications_item(2, R.drawable.ic_chest, indicationsNames.get(2),false));
-        items.add(new Indications_item(8, R.drawable.ic_im_gp, indicationsNames.get(8),false));
-        items.add(new Indications_item(7, R.drawable.ic_im_gp, indicationsNames.get(7),false));
-        items.add(new Indications_item(11, R.drawable.ic_im_gp, indicationsNames.get(11),false));
-        items.add(new Indications_item(6, R.drawable.ic_surgeon, indicationsNames.get(6),false));
-        items.add(new Indications_item(15, R.drawable.ic_urology, indicationsNames.get(15),false));
+        items.add(new Indications_item(3, R.drawable.ic_chest_indications, indicationsNames.get(3),false));
+        items.add(new Indications_item(4, R.drawable.ic_ent_indications, indicationsNames.get(4),false));
+        items.add(new Indications_item(9, R.drawable.ic_im_gp_indications, indicationsNames.get(9),false));
+        items.add(new Indications_item(10, R.drawable.ic_im_gp_indications, indicationsNames.get(10),false));
+        items.add(new Indications_item(1, R.drawable.ic_chest_indications, indicationsNames.get(1),false));
+        items.add(new Indications_item(13, R.drawable.ic_urology_indications, indicationsNames.get(13),false));
+        items.add(new Indications_item(5, R.drawable.ic_surgeon_indications, indicationsNames.get(5),false));
+        items.add(new Indications_item(12, R.drawable.ic_im_gp_indications, indicationsNames.get(12),false));
+        items.add(new Indications_item(14, R.drawable.ic_urology_indications, indicationsNames.get(14),false));
+        items.add(new Indications_item(2, R.drawable.ic_chest_indications, indicationsNames.get(2),false));
+        items.add(new Indications_item(8, R.drawable.ic_im_gp_indications, indicationsNames.get(8),false));
+        items.add(new Indications_item(7, R.drawable.ic_im_gp_indications, indicationsNames.get(7),false));
+        items.add(new Indications_item(11, R.drawable.ic_im_gp_indications, indicationsNames.get(11),false));
+        items.add(new Indications_item(6, R.drawable.ic_surgeon_indications, indicationsNames.get(6),false));
+        items.add(new Indications_item(15, R.drawable.ic_urology_indications, indicationsNames.get(15),false));
 
     }
 

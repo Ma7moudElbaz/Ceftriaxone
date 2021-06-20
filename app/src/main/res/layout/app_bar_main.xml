@@ -31,7 +31,8 @@
             android:layout_marginTop="10dp"
             android:padding="20dp"
             android:src="@drawable/ic_drawer"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:visibility="gone"/>
 
 
 
