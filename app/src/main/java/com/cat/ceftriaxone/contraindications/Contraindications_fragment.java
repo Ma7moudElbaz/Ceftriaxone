@@ -31,8 +31,7 @@ public class Contraindications_fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
-        activity.setContraindicationsColors();
-        activity.setHome(0);
+        activity.setHome(2);
 
         webView = view.findViewById(R.id.webView);
 

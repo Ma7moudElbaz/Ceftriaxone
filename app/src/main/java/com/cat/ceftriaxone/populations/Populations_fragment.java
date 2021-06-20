@@ -35,8 +35,7 @@ public class Populations_fragment extends Fragment implements View.OnClickListen
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
-        activity.setPopulationsColors();
-        activity.setHome(0);
+        activity.setHome(2);
 
         webView = view.findViewById(R.id.webView);
         population1 = view.findViewById(R.id.population_1);

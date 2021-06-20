@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_nav_bar_speciality"
+        android:icon="@drawable/ic_speciality"
+        android:title="Speciality" />
+
+    <item
+        android:id="@+id/bottom_nav_bar_indications"
+        android:icon="@drawable/ic_indications_one_color"
+        android:title="Indications" />
+
+
+    <item
+        android:id="@+id/bottom_nav_bar_products"
+        android:icon="@drawable/ic_products_one_color"
+        android:title="Products" />
+
+    <item
+        android:id="@+id/bottom_nav_bar_more"
+        android:icon="@drawable/ic_more"
+        android:title="More" />
+
+</menu>

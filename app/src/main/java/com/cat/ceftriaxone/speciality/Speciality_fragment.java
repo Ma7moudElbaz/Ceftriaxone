@@ -39,8 +39,8 @@ public class Speciality_fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         MainActivity activity = (MainActivity) getActivity();
-        activity.setSpecialityColors();
         activity.setHome(1);
+        activity.setSpeciality();
 
 
         items = new ArrayList<>();

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".more.More_fragment"
+    android:layout_marginTop="40dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+
+
+    <TextView
+        android:id="@+id/population"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:text="Special Population"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:drawableStartCompat="@drawable/ic_population_one_color"
+        app:drawableTint="@color/colorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/gray" />
+
+
+    <TextView
+        android:id="@+id/contraindication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:text="Contraindication"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        app:drawableStartCompat="@drawable/ic_contraindications_one_color"
+        app:drawableTint="@color/colorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/gray" />
+
+
+    <TextView
+        android:id="@+id/tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:text="General Tips of Dosage"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        app:drawableStartCompat="@drawable/ic_tips"
+        app:drawableTint="@color/colorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/gray" />
+
+
+    <TextView
+        android:id="@+id/pi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:text="prescribing information"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        app:drawableStartCompat="@drawable/ic_pi"
+        app:drawableTint="@color/colorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/gray" />
+</LinearLayout>

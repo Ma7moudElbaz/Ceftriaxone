@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    tools:showIn="navigation_view"-->
 
     <group android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/nav_speciality"
-            android:icon="@drawable/ic_speciality"
-            android:title="@string/menu_speciality"/>
-
-        <item
-            android:id="@+id/nav_indications"
-            android:icon="@drawable/ic_indications"
-            android:title="@string/menu_indications"/>
-
-        <item
-            android:id="@+id/nav_products"
-            android:icon="@drawable/ic_products"
-            android:title="@string/menu_products"/>
 
         <item
             android:id="@+id/nav_population"
