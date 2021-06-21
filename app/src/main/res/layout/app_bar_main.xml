@@ -19,6 +19,29 @@
             android:layout_marginTop="10dp"
             app:tint="@color/white" />
 
+
+        <com.steelkiwi.library.view.BadgeHolderLayout
+            android:id="@+id/notification"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            app:bhl_default_badge_background="@color/red_text"
+            app:bhl_text_color="@android:color/white"
+            app:bhl_text_size="12sp"
+            app:bhl_badge_radius="50dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_notifications"
+                app:tint="@color/white" />
+
+        </com.steelkiwi.library.view.BadgeHolderLayout>
+
     </RelativeLayout>
 
     <FrameLayout

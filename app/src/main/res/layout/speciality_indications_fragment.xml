@@ -9,6 +9,7 @@
         android:id="@+id/speciality_indications_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/item_indications"/>
 
 </FrameLayout>

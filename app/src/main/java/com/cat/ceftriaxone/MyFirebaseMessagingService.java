@@ -13,6 +13,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
+import com.cat.ceftriaxone.notifications.NotificationsActivity;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -32,7 +33,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     private void sendNotification(RemoteMessage remoteMessage) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, NotificationsActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 1915, intent, PendingIntent.FLAG_ONE_SHOT);
         String channelId = "High";
@@ -40,7 +41,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationCompat.Builder notificationBuilder;
         notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
-                        .setSmallIcon(R.drawable.ic_arrow_forward)
+                        .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle(remoteMessage.getNotification().getTitle())
                         .setContentText(remoteMessage.getNotification().getBody())
                         .setAutoCancel(true)

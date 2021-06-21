@@ -2,30 +2,38 @@ package com.cat.ceftriaxone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.cat.ceftriaxone.contraindications.Contraindications_fragment;
 import com.cat.ceftriaxone.indications.Indications_fragment;
 import com.cat.ceftriaxone.more.More_fragment;
+import com.cat.ceftriaxone.network.Webservice;
+import com.cat.ceftriaxone.notifications.NotificationsActivity;
 import com.cat.ceftriaxone.pi.PI_fragment;
 import com.cat.ceftriaxone.populations.Populations_fragment;
 import com.cat.ceftriaxone.products.Products_fragment;
 import com.cat.ceftriaxone.speciality.Speciality_fragment;
 import com.cat.ceftriaxone.tips.Tips_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
+import com.steelkiwi.library.view.BadgeHolderLayout;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
+import org.json.JSONObject;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
     int isHome = 1;
@@ -34,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         isHome = home;
     }
 
-    ImageView btm_nav_speciality, btm_nav_indications, btm_nav_products, btm_nav_populations, btm_nav_contraindications, btm_nav_tips, btm_nav_pi;
 
     public void setSpeciality() {
         if (bottomNavigationView.getSelectedItemId() != R.id.bottom_nav_bar_speciality) {
@@ -54,62 +61,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    BadgeHolderLayout notification;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btm_nav_speciality = findViewById(R.id.btm_nav_speciality);
-        btm_nav_indications = findViewById(R.id.btm_nav_indications);
-        btm_nav_products = findViewById(R.id.btm_nav_products);
-        btm_nav_populations = findViewById(R.id.btm_nav_populations);
-        btm_nav_contraindications = findViewById(R.id.btm_nav_contraindications);
-        btm_nav_tips = findViewById(R.id.btm_nav_tips);
-        btm_nav_pi = findViewById(R.id.btm_nav_pi);
-
-        btm_nav_speciality.setOnClickListener(this);
-        btm_nav_indications.setOnClickListener(this);
-        btm_nav_products.setOnClickListener(this);
-        btm_nav_populations.setOnClickListener(this);
-        btm_nav_contraindications.setOnClickListener(this);
-        btm_nav_tips.setOnClickListener(this);
-        btm_nav_pi.setOnClickListener(this);
-
+        notification = findViewById(R.id.notification);
         bottomNavigationView = findViewById(R.id.btm_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
+        notification.setOnClickListener(v -> {
+            Intent i = new Intent(MainActivity.this, NotificationsActivity.class);
+            startActivity(i);
+        });
 
-
-//        navigateToSpeciality();
         setContentFragment(new Speciality_fragment(), "");
 
-    }
+        getNotificationsCount();
 
-
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btm_nav_speciality) {
-            navigateToSpeciality();
-        } else if (v.getId() == R.id.btm_nav_indications) {
-            navigateToIndications();
-        } else if (v.getId() == R.id.btm_nav_products) {
-            navigateToProducts();
-        } else if (v.getId() == R.id.btm_nav_populations) {
-            navigateToPopulation();
-        } else if (v.getId() == R.id.btm_nav_contraindications) {
-            navigateToContraindications();
-        } else if (v.getId() == R.id.btm_nav_tips) {
-            navigateToTips();
-        } else if (v.getId() == R.id.btm_nav_pi) {
-            navigateToPI();
-        }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
-//        SideNavigationHandler handler = new SideNavigationHandler(getBaseContext(), id);
-//        handler.navigate();
 
         if (id == R.id.bottom_nav_bar_speciality) {
             navigateToSpeciality();
@@ -119,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigateToProducts();
         } else if (id == R.id.bottom_nav_bar_more) {
             navigateToMore();
-        }else if (id == R.id.nav_population) {
+        } else if (id == R.id.nav_population) {
             navigateToPopulation();
         } else if (id == R.id.nav_contraindications) {
             navigateToContraindications();
@@ -132,17 +108,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    private void setBottomNavSelected(View id) {
-        btm_nav_speciality.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.bottom_nav_bg, getTheme()));
-        btm_nav_indications.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.bottom_nav_bg, getTheme()));
-        btm_nav_products.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.bottom_nav_bg, getTheme()));
-        btm_nav_populations.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.bottom_nav_bg, getTheme()));
-        btm_nav_contraindications.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.bottom_nav_bg, getTheme()));
-        btm_nav_tips.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.bottom_nav_bg, getTheme()));
-        btm_nav_pi.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.bottom_nav_bg, getTheme()));
-
-        id.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.colorAccent, getTheme()));
-    }
 
     //Navigate To Speciality Tabs
     private void navigateToSpeciality() {
@@ -187,27 +152,61 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if (isHome == 1){
+        if (isHome == 1) {
             new AlertDialog.Builder(MainActivity.this)
                     .setTitle("Are you sure you want to exit ? ")
 //                    .setMessage("You have to login first")
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // Continue with delete operation
-                            finish();
-                        }
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        // Continue with delete operation
+                        finish();
                     })
                     .setNegativeButton("Dismiss", null)
                     .show();
-        }
-        else if (isHome == 2){
+        } else if (isHome == 2) {
             super.onBackPressed();
-        }
-        else {
+        } else {
             navigateToSpeciality();
         }
 
     }
 
 
+    private void getNotificationsCount() {
+
+        Webservice.getInstance().getApi().getCurrentNotificationsCount().enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+
+                try {
+                    assert response.body() != null;
+                    JSONObject responseObject = new JSONObject(response.body().string());
+                    JSONObject notificationsCountObj = responseObject.getJSONObject("data");
+                    int notificationsCount = notificationsCountObj.getInt("count");
+                    setNotificationsCount(notificationsCount);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+                Log.d("Error Throw", t.toString());
+                Log.d("commit Test Throw", t.toString());
+                Log.d("Call", t.toString());
+                Toast.makeText(getBaseContext(), "Network Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void setNotificationsCount(int currentNotificationsCount) {
+        int missedNotifications = currentNotificationsCount - NotificationsCount.getNotificationCount(getBaseContext());
+        notification.setCountWithAnimation(missedNotifications);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getNotificationsCount();
+    }
 }
