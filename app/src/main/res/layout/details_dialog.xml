@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:padding="10dp">
 
         <TextView
+            android:background="@drawable/white_bg"
             android:id="@+id/txtView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_gray"
-            android:textColor="@color/gray_text"
-            android:padding="10dp"/>
-
+            android:textColor="@color/colorPrimary"
+            android:text="kdmgsklgkljsdkgjkldsjgkljdskgjklsdjgksdjgkjsdkgjkdjgkldjkfjgkjgkfjgkfjklgjkfgjlkgjl"/>
 
 </RelativeLayout>
