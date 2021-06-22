@@ -37,40 +37,22 @@ public class Indication_15_adult extends Fragment {
         slide1 = view.findViewById(R.id.slide_1);
         slide2 = view.findViewById(R.id.slide_2);
 
-        info1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        info1.setOnClickListener(v -> new DetailsDialog("The dose recommendations are based on limited data. National or local guidance should be taken into consideration").
+                show(getFragmentManager(), "dialog"));
 
-                new DetailsDialog("The dose recommendations are based on limited data. National or local guidance should be taken into consideration").
-                        show(getFragmentManager(), "dialog");
-            }
+
+        info2.setOnClickListener(v -> new DetailsDialog("The dose recommendations are based on limited data. National or local guidance should be taken into consideration").
+                show(getFragmentManager(), "dialog"));
+
+        next.setOnClickListener(v -> {
+            slide1.setVisibility(View.GONE);
+            slide2.setVisibility(View.VISIBLE);
         });
 
 
-        info2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                new DetailsDialog("The dose recommendations are based on limited data. National or local guidance should be taken into consideration").
-                        show(getFragmentManager(), "dialog");
-            }
-        });
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                slide1.setVisibility(View.GONE);
-                slide2.setVisibility(View.VISIBLE);
-            }
-        });
-
-
-        prev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                slide1.setVisibility(View.VISIBLE);
-                slide2.setVisibility(View.GONE);
-            }
+        prev.setOnClickListener(v -> {
+            slide1.setVisibility(View.VISIBLE);
+            slide2.setVisibility(View.GONE);
         });
     }
 }

@@ -15,8 +15,6 @@ import android.webkit.WebView;
 import com.cat.ceftriaxone.MainActivity;
 import com.cat.ceftriaxone.R;
 
-import java.util.ArrayList;
-
 public class Contraindications_fragment extends Fragment {
 
     @Override

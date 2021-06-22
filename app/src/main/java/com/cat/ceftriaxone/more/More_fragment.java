@@ -16,7 +16,6 @@ import com.cat.ceftriaxone.R;
 import com.cat.ceftriaxone.contraindications.Contraindications_fragment;
 import com.cat.ceftriaxone.pi.PI_fragment;
 import com.cat.ceftriaxone.populations.Populations_fragment;
-import com.cat.ceftriaxone.speciality.indications.Indication_container;
 import com.cat.ceftriaxone.tips.Tips_fragment;
 
 public class More_fragment extends Fragment {

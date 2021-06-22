@@ -21,9 +21,9 @@ import java.util.List;
 
 public class Indications_adapter extends RecyclerView.Adapter<Indications_adapter.ViewHolder> {
 
-    private List<Indications_item> items;
+    private final List<Indications_item> items;
 
-    private Context mContext;
+    private final Context mContext;
 
     public Indications_adapter(Context context, ArrayList<Indications_item> items) {
 
@@ -35,7 +35,7 @@ public class Indications_adapter extends RecyclerView.Adapter<Indications_adapte
     @Override
     public Indications_adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_indications, parent, false);
-        Indications_adapter.ViewHolder holder = new Indications_adapter.ViewHolder(view);
+        Indications_adapter.ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
@@ -45,13 +45,10 @@ public class Indications_adapter extends RecyclerView.Adapter<Indications_adapte
 
         holder.title.setText(items.get(position).getTitle());
         holder.img.setImageResource(items.get(position).getImg());
-        holder.parent_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MainActivity activity = (MainActivity) mContext;
-                activity.setContentFragment(new Indication_container(items.get(position).getId(),items.get(position).isPed),"Indication Container");
+        holder.parent_layout.setOnClickListener(view -> {
+            MainActivity activity = (MainActivity) mContext;
+            activity.setContentFragment(new Indication_container(items.get(position).getId(),items.get(position).isPed),"Indication Container");
 
-            }
         });
 
     }
@@ -61,7 +58,7 @@ public class Indications_adapter extends RecyclerView.Adapter<Indications_adapte
         return items.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
         TextView title;

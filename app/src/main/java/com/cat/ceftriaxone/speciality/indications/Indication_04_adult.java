@@ -1,7 +1,5 @@
 package com.cat.ceftriaxone.speciality.indications;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,13 +28,7 @@ public class Indication_04_adult extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
          info = view.findViewById(R.id.info);
-         info.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-
-                 new DetailsDialog("Limited data suggest that If the patient is severely ill or the previous therapy has failed, Ceftriaxone may be effective when given for 3 days.").
-                         show(getFragmentManager(), "dialog");
-             }
-         });
+         info.setOnClickListener(v -> new DetailsDialog("Limited data suggest that If the patient is severely ill or the previous therapy has failed, Ceftriaxone may be effective when given for 3 days.").
+                 show(getFragmentManager(), "dialog"));
     }
 }

@@ -35,8 +35,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Indications_fragment_names {
-    private Map<Integer, Fragment> fragmentsNames_adult = new HashMap<Integer, Fragment>();
-    private Map<Integer, Fragment> fragmentsNames_ped = new HashMap<Integer, Fragment>();
+    private final Map<Integer, Fragment> fragmentsNames_adult = new HashMap<Integer, Fragment>();
+    private final Map<Integer, Fragment> fragmentsNames_ped = new HashMap<Integer, Fragment>();
 
     public Indications_fragment_names() {
         setFragmentsNames_adult();

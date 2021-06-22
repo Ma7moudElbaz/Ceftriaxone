@@ -55,29 +55,15 @@ public class Indication_04_ped extends Fragment {
         dosageTxt = String.valueOf(maxDosage);
         indicationDosage.setText(dosageTxt);
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculateDose();
-            }
+        next.setOnClickListener(v -> calculateDose());
+
+        prev.setOnClickListener(v -> {
+            slide1.setVisibility(View.VISIBLE);
+            slide2.setVisibility(View.GONE);
         });
 
-        prev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                slide1.setVisibility(View.VISIBLE);
-                slide2.setVisibility(View.GONE);
-            }
-        });
-
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                new DetailsDialog("Limited data suggest that If the child is severely ill or the initial therapy has failed, Ceftriaxone may be effective when given for 50 mg/kg/day 3 days.").
-                        show(getFragmentManager(), "dialog");
-            }
-        });
+        info.setOnClickListener(v -> new DetailsDialog("Limited data suggest that If the child is severely ill or the initial therapy has failed, Ceftriaxone may be effective when given for 50 mg/kg/day 3 days.").
+                show(getFragmentManager(), "dialog"));
     }
 
     private void calculateDose() {

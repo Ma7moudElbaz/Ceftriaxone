@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Indications_names {
-    private Map<Integer, String> names = new HashMap<Integer, String>();
+    private final Map<Integer, String> names = new HashMap<Integer, String>();
 
     public Indications_names() {
         names.put(1, "Community acquired pneumonia (CAP)");

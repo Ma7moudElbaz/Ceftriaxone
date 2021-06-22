@@ -30,13 +30,7 @@ public class Indication_12_adult extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         info = view.findViewById(R.id.info);
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                new DetailsDialog("The recommended treatment durations vary and national or local guidelines should be taken into consideration.").
-                        show(getFragmentManager(), "dialog");
-            }
-        });
+        info.setOnClickListener(v -> new DetailsDialog("The recommended treatment durations vary and national or local guidelines should be taken into consideration.").
+                show(getFragmentManager(), "dialog"));
     }
 }

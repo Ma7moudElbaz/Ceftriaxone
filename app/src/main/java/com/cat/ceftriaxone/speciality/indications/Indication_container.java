@@ -2,14 +2,12 @@ package com.cat.ceftriaxone.speciality.indications;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
@@ -23,7 +21,6 @@ import com.cat.ceftriaxone.MainActivity;
 import com.cat.ceftriaxone.R;
 import com.cat.ceftriaxone.speciality.Indications_fragment_names;
 
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -83,19 +80,9 @@ public class Indication_container extends Fragment {
             gotoAdult();
         }
 
-        adult_tab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoAdult();
-            }
-        });
+        adult_tab.setOnClickListener(v -> gotoAdult());
 
-        ped_tab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoPed();
-            }
-        });
+        ped_tab.setOnClickListener(v -> gotoPed());
 
     }
 

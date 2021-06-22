@@ -35,7 +35,7 @@ in adults:"
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/indication_bottom_bg"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"

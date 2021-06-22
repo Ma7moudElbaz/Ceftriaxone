@@ -1,16 +1,12 @@
 package com.cat.ceftriaxone.speciality;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,9 +21,9 @@ import java.util.List;
 
 public class Speciality_adapter extends RecyclerView.Adapter<Speciality_adapter.ViewHolder> {
 
-    private List<Speciality_item> items;
+    private final List<Speciality_item> items;
 
-    private Context mContext;
+    private final Context mContext;
 
     public Speciality_adapter(Context context, ArrayList<Speciality_item> items) {
 
@@ -39,7 +35,7 @@ public class Speciality_adapter extends RecyclerView.Adapter<Speciality_adapter.
     @Override
     public Speciality_adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_speciality, parent, false);
-        Speciality_adapter.ViewHolder holder = new Speciality_adapter.ViewHolder(view);
+        Speciality_adapter.ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
@@ -49,13 +45,10 @@ public class Speciality_adapter extends RecyclerView.Adapter<Speciality_adapter.
 
         holder.title.setText(items.get(position).getTitle());
         holder.img.setImageResource(items.get(position).getImg());
-        holder.parent_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MainActivity activity = (MainActivity) mContext;
+        holder.parent_layout.setOnClickListener(view -> {
+            MainActivity activity = (MainActivity) mContext;
 //                if (items.get(position).getId()!=6)
-                activity.setContentFragment(new Speciality_indications_fragment(items.get(position).getId()),"Speciality_indications_fragment");
-            }
+            activity.setContentFragment(new Speciality_indications_fragment(items.get(position).getId()),"Speciality_indications_fragment");
         });
 
     }
@@ -65,7 +58,7 @@ public class Speciality_adapter extends RecyclerView.Adapter<Speciality_adapter.
         return items.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
         TextView title;

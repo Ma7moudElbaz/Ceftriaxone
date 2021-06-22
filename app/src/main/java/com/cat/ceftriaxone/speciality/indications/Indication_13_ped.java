@@ -52,19 +52,11 @@ public class Indication_13_ped extends Fragment {
         dosageTxt = minDosage + "-" + maxDosage;
         indicationDosage.setText(dosageTxt);
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculateDose();
-            }
-        });
+        next.setOnClickListener(v -> calculateDose());
 
-        prev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                slide1.setVisibility(View.VISIBLE);
-                slide2.setVisibility(View.GONE);
-            }
+        prev.setOnClickListener(v -> {
+            slide1.setVisibility(View.VISIBLE);
+            slide2.setVisibility(View.GONE);
         });
     }
 

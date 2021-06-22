@@ -55,29 +55,15 @@ public class Indication_15_ped extends Fragment {
         dosageTxt = minDosage + "-" + maxDosage;
         indicationDosage.setText(dosageTxt);
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculateDose();
-            }
+        next.setOnClickListener(v -> calculateDose());
+
+        prev.setOnClickListener(v -> {
+            slide1.setVisibility(View.VISIBLE);
+            slide2.setVisibility(View.GONE);
         });
 
-        prev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                slide1.setVisibility(View.VISIBLE);
-                slide2.setVisibility(View.GONE);
-            }
-        });
-
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                new DetailsDialog("The dose recommendations in syphilis, including neurosyphilis, are based on limited data. National or local guidance should be taken into consideration").
-                        show(getFragmentManager(), "dialog");
-            }
-        });
+        info.setOnClickListener(v -> new DetailsDialog("The dose recommendations in syphilis, including neurosyphilis, are based on limited data. National or local guidance should be taken into consideration").
+                show(getFragmentManager(), "dialog"));
     }
 
 
