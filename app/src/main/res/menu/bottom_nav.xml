@@ -8,13 +8,13 @@
 
     <item
         android:id="@+id/bottom_nav_bar_indications"
-        android:icon="@drawable/ic_indications_one_color"
+        android:icon="@drawable/ic_indication"
         android:title="Indications" />
 
 
     <item
         android:id="@+id/bottom_nav_bar_products"
-        android:icon="@drawable/ic_products_one_color"
+        android:icon="@drawable/ic_products"
         android:title="Products" />
 
     <item

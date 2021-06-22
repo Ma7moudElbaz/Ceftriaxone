@@ -20,7 +20,7 @@
         android:text="Special Population"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        app:drawableStartCompat="@drawable/ic_population_one_color"
+        app:drawableStartCompat="@drawable/ic_population"
         app:drawableTint="@color/colorPrimary" />
 
     <View
@@ -40,7 +40,7 @@
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:gravity="center_vertical"
-        app:drawableStartCompat="@drawable/ic_contraindications_one_color"
+        app:drawableStartCompat="@drawable/ic_contraindications"
         app:drawableTint="@color/colorPrimary" />
 
     <View

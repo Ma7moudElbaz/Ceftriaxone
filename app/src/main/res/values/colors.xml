@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#094F85</color>
     <color name="colorPrimaryDark">#094F85</color>
+
+    <color name="colorPrimary">#094F85</color>
     <color name="colorAccent">#F2AD00</color>
-
-
     <color name="bottom_nav_bg">#60c5b5</color>
-    <color name="bottom_nav_bg_old">#51AAAC</color>
     <color name="active_tab">#094F85</color>
     <color name="inActive_tab">#d9efee</color>
-    <color name="inActive_tab_old">#51AAAC</color>
-    <color name="indications_item_bg">#F6F7F9</color>
-    <color name="white">#fff</color>
-    <color name="gray">#BFC2C2C2</color>
-    <color name="black">#000000</color>
     <color name="black_text">#000000</color>
     <color name="gray_text">#7F7F7F</color>
     <color name="blue_text">#094F85</color>
     <color name="brown_text">#BF9000</color>
     <color name="red_text">#C00000</color>
+
+    <color name="bottom_nav_bg_old">#51AAAC</color>
+    <color name="inActive_tab_old">#51AAAC</color>
+    <color name="indications_item_bg">#F6F7F9</color>
+    <color name="white">#fff</color>
+    <color name="gray">#BFC2C2C2</color>
+    <color name="black">#000000</color>
     <color name="indication_bottom_bg">#F2F2F2</color>
     <color name="transparent">#00ffffff</color>
 </resources>
