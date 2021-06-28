@@ -30,7 +30,8 @@
             app:bhl_text_size="12sp"
             app:bhl_badge_radius="50dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:visibility="gone">
 
 
             <ImageView
