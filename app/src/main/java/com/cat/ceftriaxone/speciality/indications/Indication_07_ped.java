@@ -48,8 +48,8 @@ public class Indication_07_ped extends Fragment {
         weight = view.findViewById(R.id.et_weight);
         dose = view.findViewById(R.id.dose);
 
-        minDosage = 0;
-        maxDosage = 50;
+        minDosage = 50;
+        maxDosage = 80;
         dosageTxt = minDosage + "-" + maxDosage;
         indicationDosage.setText(dosageTxt);
 
