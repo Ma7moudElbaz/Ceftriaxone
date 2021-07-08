@@ -12,10 +12,16 @@
     <color name="brown_text">#BF9000</color>
     <color name="red_text">#C00000</color>
 
+    <color name="hint_text_bg">#E8F3FA</color>
+
+
+
+
     <color name="bottom_nav_bg_old">#51AAAC</color>
     <color name="inActive_tab_old">#51AAAC</color>
     <color name="indications_item_bg">#F6F7F9</color>
     <color name="white">#fff</color>
+    <color name="white_blue">#F4F8FB</color>
     <color name="gray">#BFC2C2C2</color>
     <color name="black">#000000</color>
     <color name="indication_bottom_bg">#F2F2F2</color>
