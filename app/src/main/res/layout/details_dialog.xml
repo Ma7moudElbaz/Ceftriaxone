@@ -2,16 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/hint_text_bg"
     android:padding="10dp">
 
-        <TextView
-            android:background="@drawable/white_bg"
+        <com.lockwood.compound.CompoundTextView
             android:id="@+id/txtView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_gray"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/blue_text"
+            android:textSize="@dimen/text_gray_s"
+            app:drawableGravity="top"
+            app:drawablePadding="10dp"
+            app:drawableStart="@drawable/ic_hand"
             android:text="kdmgsklgkljsdkgjkldsjgkljdskgjklsdjgksdjgkjsdkgjkdjgkldjkfjgkjgkfjgkfjklgjkfgjlkgjl"/>
 
 </RelativeLayout>

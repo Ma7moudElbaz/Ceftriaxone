@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".more.More_fragment"
-    android:layout_marginTop="40dp"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
-
+    android:layout_marginTop="40dp"
+    android:layout_marginRight="10dp"
+    android:orientation="vertical"
+    tools:context=".more.More_fragment">
 
 
     <TextView
@@ -36,10 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="5dp"
+        android:gravity="center_vertical"
         android:text="Contraindication"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        android:gravity="center_vertical"
         app:drawableStartCompat="@drawable/ic_contraindications"
         app:drawableTint="@color/colorPrimary" />
 
@@ -56,10 +55,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="5dp"
+        android:gravity="center_vertical"
         android:text="General Tips of Dosage"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        android:gravity="center_vertical"
         app:drawableStartCompat="@drawable/ic_tips"
         app:drawableTint="@color/colorPrimary" />
 
@@ -76,10 +75,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawablePadding="5dp"
+        android:gravity="center_vertical"
         android:text="Prescribing Information"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        android:gravity="center_vertical"
         app:drawableStartCompat="@drawable/ic_pi"
         app:drawableTint="@color/colorPrimary" />
 

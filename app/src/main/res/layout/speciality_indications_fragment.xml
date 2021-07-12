@@ -10,6 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        tools:listitem="@layout/item_indications"/>
+        tools:listitem="@layout/item_indications" />
 
 </FrameLayout>
