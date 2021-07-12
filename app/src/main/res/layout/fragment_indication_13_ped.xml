@@ -88,7 +88,6 @@ days to 12 years of age (\u003C 50 kg):"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
                     android:text="Dosage"
                     android:textColor="@color/blue_text"
                     android:textSize="@dimen/text_black"
@@ -105,8 +104,7 @@ days to 12 years of age (\u003C 50 kg):"
                     android:inputType="number"
                     android:padding="10dp"
                     android:textColor="@color/black_text"
-                    android:textSize="@dimen/text_black"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/text_black" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -167,7 +165,7 @@ children should not exceed 5 mg/kg."
                     android:elevation="2.5dp"
                     android:inputType="number"
                     android:padding="10dp"
-                    android:textColor="@color/blue_text"
+                    android:textColor="@color/black_text"
                     android:textSize="@dimen/text_black" />
 
                 <TextView

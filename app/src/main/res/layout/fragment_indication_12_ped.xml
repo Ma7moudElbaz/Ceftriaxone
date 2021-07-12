@@ -66,8 +66,7 @@ days to 12 years of age (\u003C 50 kg):"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:fillViewport="true"
-        android:visibility="gone">
+        android:fillViewport="true">
 
 
         <LinearLayout
@@ -227,7 +226,8 @@ calculated based on ideal bodyweight for their gender and age."
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:visibility="gone">
 
 
         <LinearLayout
