@@ -169,8 +169,7 @@ children should not exceed 5 mg/kg."
                     android:inputType="number"
                     android:padding="10dp"
                     android:textColor="@color/black_text"
-                    android:textSize="@dimen/text_black"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/text_black" />
 
                 <TextView
                     android:layout_width="0dp"
