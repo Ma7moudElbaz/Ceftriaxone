@@ -93,7 +93,7 @@ public class Indication_container extends Fragment {
         //normal app ped tab in all except 3 &14
         if (indicationId == 3 || indicationId == 14) {
             ped_tab.setVisibility(View.GONE);
-            tabs_container.setBackgroundColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+            tabs_container.setBackgroundColor(ResourcesCompat.getColor(getResources(),R.color.white_blue,null));
 
         }
 
