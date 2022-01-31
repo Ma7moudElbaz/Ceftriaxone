@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         setContentFragment(new Speciality_fragment(), "");
 
-        getNotificationsCount();
+//        getNotificationsCount();
 
     }
 
@@ -207,6 +207,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onResume() {
         super.onResume();
-        getNotificationsCount();
+//        getNotificationsCount();
     }
 }
