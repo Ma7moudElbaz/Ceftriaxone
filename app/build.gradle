@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId "com.cat.ceftriaxone"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
@@ -63,5 +63,9 @@ dependencies {
 
     //compound textview
     implementation 'com.github.lndmflngs:compound-text-view:1.3.2'
+
+    //easy Location
+    implementation 'com.github.anirudhmpai:EasyLocationFetch:2.1.1'
+    implementation 'com.github.AravindVijay7:GeoLocator-Android:2.0.0'
 
 }

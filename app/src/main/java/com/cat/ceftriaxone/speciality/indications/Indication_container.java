@@ -10,6 +10,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +20,18 @@ import android.widget.TextView;
 
 import com.cat.ceftriaxone.MainActivity;
 import com.cat.ceftriaxone.R;
+import com.cat.ceftriaxone.network.Webservice;
 import com.cat.ceftriaxone.speciality.Indications_fragment_names;
+import com.cat.ceftriaxone.speciality.Indications_names;
 
+import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class Indication_container extends Fragment {
@@ -45,6 +55,7 @@ public class Indication_container extends Fragment {
     RelativeLayout adult_tab, ped_tab;
     TextView adult_text, ped_text;
     Map<Integer, Fragment> fragmentsNames_adult, fragmentsNames_ped;
+
 
     int indicationId;
     boolean isPed;
@@ -84,6 +95,8 @@ public class Indication_container extends Fragment {
 
         ped_tab.setOnClickListener(v -> gotoPed());
 
+        addIndicationToDeviceActivity();
+
     }
 
     private void setTabs() {
@@ -93,7 +106,7 @@ public class Indication_container extends Fragment {
         //normal app ped tab in all except 3 &14
         if (indicationId == 3 || indicationId == 14) {
             ped_tab.setVisibility(View.GONE);
-            tabs_container.setBackgroundColor(ResourcesCompat.getColor(getResources(),R.color.white_blue,null));
+            tabs_container.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.white_blue, null));
 
         }
 
@@ -104,11 +117,11 @@ public class Indication_container extends Fragment {
         setContentFragment(fragmentsNames_adult.get(indicationId));
         adult_tab.setBackgroundResource(R.drawable.active_tab_bg);
         adult_text.setTextColor(
-                ResourcesCompat.getColor(getResources(),R.color.white,null));
+                ResourcesCompat.getColor(getResources(), R.color.white, null));
         adult_text.setTypeface(null, Typeface.BOLD);
         ped_tab.setBackgroundResource(R.drawable.inactive_tab_bg);
         ped_text.setTextColor(
-                ResourcesCompat.getColor(getResources(),R.color.colorPrimary,null));
+                ResourcesCompat.getColor(getResources(), R.color.colorPrimary, null));
         ped_text.setTypeface(null, Typeface.NORMAL);
     }
 
@@ -116,11 +129,32 @@ public class Indication_container extends Fragment {
         setContentFragment(fragmentsNames_ped.get(indicationId));
         adult_tab.setBackgroundResource(R.drawable.inactive_tab_bg);
         adult_text.setTextColor(
-                ResourcesCompat.getColor(getResources(),R.color.colorPrimary,null));
+                ResourcesCompat.getColor(getResources(), R.color.colorPrimary, null));
         adult_text.setTypeface(null, Typeface.NORMAL);
         ped_tab.setBackgroundResource(R.drawable.active_tab_bg);
         ped_text.setTextColor(
-                ResourcesCompat.getColor(getResources(),R.color.white,null));
+                ResourcesCompat.getColor(getResources(), R.color.white, null));
         ped_text.setTypeface(null, Typeface.BOLD);
     }
+
+    private void addIndicationToDeviceActivity() {
+        Indications_names names = new Indications_names();
+        Map<Integer, String> indicationsNames = names.getNames();
+        String selectedIndicationName = indicationsNames.get(indicationId);
+        String device_id = Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
+        Map<String, String> map = new HashMap<>();
+        map.put("mac_address", device_id);
+        map.put("screen", selectedIndicationName.toLowerCase(Locale.ROOT));
+
+        Webservice.getInstance().getApi().addDeviceActivity(map).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+            }
+        });
+    }
+
 }

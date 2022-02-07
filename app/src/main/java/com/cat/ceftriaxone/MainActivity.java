@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.anirudh.locationfetch.EasyLocationFetch;
+import com.anirudh.locationfetch.GeoLocationModel;
 import com.cat.ceftriaxone.contraindications.Contraindications_fragment;
 import com.cat.ceftriaxone.indications.Indications_fragment;
 import com.cat.ceftriaxone.more.More_fragment;
@@ -24,6 +26,7 @@ import com.cat.ceftriaxone.products.Products_fragment;
 import com.cat.ceftriaxone.speciality.Speciality_fragment;
 import com.cat.ceftriaxone.tips.Tips_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.location.aravind.getlocation.GeoLocator;
 import com.steelkiwi.library.view.BadgeHolderLayout;
 
 import org.json.JSONObject;
@@ -167,9 +170,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         } else {
             navigateToSpeciality();
         }
-
     }
-
 
     private void getNotificationsCount() {
 
