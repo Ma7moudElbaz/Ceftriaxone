@@ -2,13 +2,19 @@ package com.cat.ceftriaxone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -26,10 +32,19 @@ import com.cat.ceftriaxone.products.Products_fragment;
 import com.cat.ceftriaxone.speciality.Speciality_fragment;
 import com.cat.ceftriaxone.tips.Tips_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.location.aravind.getlocation.GeoLocator;
 import com.steelkiwi.library.view.BadgeHolderLayout;
 
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -40,11 +55,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     BottomNavigationView bottomNavigationView;
     int isHome = 1;
-
     public void setHome(int home) {
         isHome = home;
     }
-
 
     public void setSpeciality() {
         if (bottomNavigationView.getSelectedItemId() != R.id.bottom_nav_bar_speciality) {
@@ -52,24 +65,58 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
     }
 
-
     public void setContentFragment(Fragment fragment, String fragmentName) {
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.contentLayout, fragment);
         fragmentTransaction.addToBackStack(fragmentName);
         fragmentTransaction.commit();
-
     }
 
     BadgeHolderLayout notification;
+    String device_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        device_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
+
+
+        if (!DeviceUtils.isDeviceInitiated(getBaseContext())) {
+            addDeviceLocation(device_id, "n/a", "n/a");
+        }
+        if (!DeviceUtils.isLocationGranted(getBaseContext())) {
+
+            if (checkPermissions()) {
+                if (isLocationEnabled()) {
+                    getLocationData();
+                }
+            } else {
+                Log.e("test", "location disabled");
+                Dexter.withContext(getBaseContext()).withPermissions(
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION).withListener(new MultiplePermissionsListener() {
+                    @Override
+                    public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
+                        if (multiplePermissionsReport.areAllPermissionsGranted()) {
+                            if (isLocationEnabled()) {
+                                getLocationData();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
+
+                    }
+                }).check();
+            }
+
+        }
+
 
         notification = findViewById(R.id.notification);
         bottomNavigationView = findViewById(R.id.btm_nav);
@@ -205,9 +252,59 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         notification.setCountWithAnimation(missedNotifications);
     }
 
+    private void addDeviceLocation(String device_id, String country, String city) {
+        Map<String, String> map = new HashMap<>();
+        map.put("mac_address", device_id);
+        map.put("country", country);
+        map.put("city", city);
+
+        Webservice.getInstance().getApi().addDeviceLocation(map).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                if (country.equals("n/a")) {
+                    DeviceUtils.setDeviceInitiated(getBaseContext(), true);
+                } else {
+                    DeviceUtils.setDeviceInitiated(getBaseContext(), true);
+                    DeviceUtils.setLocationGranted(getBaseContext(), true);
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+            }
+        });
+    }
+
+    //check permissions
+    private boolean checkPermissions() {
+        return ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    // check location
+    private boolean isLocationEnabled() {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+    }
+
+    //get city and country
+    private void getLocationData() {
+        GeoLocator geoLocator = new GeoLocator(getApplicationContext(), MainActivity.this);
+        String cityTxt = "n/a";
+        String countryTxt = "n/a";
+        try {
+            cityTxt = geoLocator.getCity();
+            countryTxt = geoLocator.getCountry();
+        } catch (Exception e) {
+            Log.e("Exception", "" + e);
+        }
+        addDeviceLocation(device_id, countryTxt, cityTxt);
+
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
 //        getNotificationsCount();
     }
+
 }
