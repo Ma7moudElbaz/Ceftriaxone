@@ -19,8 +19,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.anirudh.locationfetch.EasyLocationFetch;
-import com.anirudh.locationfetch.GeoLocationModel;
 import com.cat.ceftriaxone.contraindications.Contraindications_fragment;
 import com.cat.ceftriaxone.indications.Indications_fragment;
 import com.cat.ceftriaxone.more.More_fragment;
@@ -37,7 +35,6 @@ import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.location.aravind.getlocation.GeoLocator;
 import com.steelkiwi.library.view.BadgeHolderLayout;
 
 import org.json.JSONObject;
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         device_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-
+        getLocationDataEnglish();
 
 
         if (!DeviceUtils.isDeviceInitiated(getBaseContext())) {
@@ -288,16 +285,38 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     //get city and country
     private void getLocationData() {
-        GeoLocator geoLocator = new GeoLocator(getApplicationContext(), MainActivity.this);
+        Locator geoLocator = new Locator(getApplicationContext(), MainActivity.this);
         String cityTxt = "n/a";
         String countryTxt = "n/a";
         try {
-            cityTxt = geoLocator.getCity();
+            cityTxt = geoLocator.getState();
             countryTxt = geoLocator.getCountry();
         } catch (Exception e) {
             Log.e("Exception", "" + e);
         }
         addDeviceLocation(device_id, countryTxt, cityTxt);
+
+    }
+
+    //get city and country in english
+    private void getLocationDataEnglish() {
+        Locator geoLocator = new Locator(getApplicationContext(), MainActivity.this);
+        try {
+//            Geocoder geocoder = new Geocoder(this, Locale.ENGLISH);
+//            List<Address> addresses = geocoder.getFromLocation(geoLocator.getLattitude(), geoLocator.getLattitude(), 1);
+//            String cityName = addresses.get(0).getLocality();
+//            String stateName = addresses.get(0).getAdminArea();
+//            String countryName = addresses.get(0).getCountryName();
+
+            String cityNameLocate = geoLocator.getCity();
+            String stateNameLocate = geoLocator.getState();
+            String countryNameLocate = geoLocator.getCountry();
+
+//            Log.e("Data", ""+cityName +"\n" +stateName+"\n" +countryName );
+            Log.e("Data Locate", ""+cityNameLocate+"\n" +stateNameLocate +"\n" +countryNameLocate );
+        } catch (Exception e) {
+            Log.e("Exception", "" + e);
+        }
 
     }
 
