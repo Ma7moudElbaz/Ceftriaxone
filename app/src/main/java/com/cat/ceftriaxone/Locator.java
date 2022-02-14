@@ -142,7 +142,8 @@ public class Locator {
     public void geoAddress() {
         Geocoder geocoder;
         List<Address> addresses;
-        geocoder = new Geocoder(context, Locale.ENGLISH);
+        Locale.setDefault(Locale.ENGLISH);
+        geocoder = new Geocoder(context, Locale.getDefault());
 
         try {
             addresses = geocoder.getFromLocation(lattitude, longitude, 1);
@@ -157,7 +158,7 @@ public class Locator {
                 knownName = addresses.get(0).getFeatureName();
             } else {
                 //address array is empty
-                Toast.makeText(context, "Unble to Trace your location", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Unble to Trace your location", Toast.LENGTH_SHORT).show();
             }
         } catch (IOException e) {
             e.printStackTrace();

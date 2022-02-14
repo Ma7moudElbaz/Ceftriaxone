@@ -78,12 +78,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        device_id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-        getLocationDataEnglish();
+        device_id = "Android-"+Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+//        getLocationDataEnglish();
 
 
         if (!DeviceUtils.isDeviceInitiated(getBaseContext())) {
-            addDeviceLocation(device_id, "n/a", "n/a");
+            addDeviceLocation(device_id, "", "");
         }
         if (!DeviceUtils.isLocationGranted(getBaseContext())) {
 
@@ -258,7 +258,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Webservice.getInstance().getApi().addDeviceLocation(map).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                if (country.equals("n/a")) {
+                if (country.equals("")) {
                     DeviceUtils.setDeviceInitiated(getBaseContext(), true);
                 } else {
                     DeviceUtils.setDeviceInitiated(getBaseContext(), true);
@@ -286,8 +286,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     //get city and country
     private void getLocationData() {
         Locator geoLocator = new Locator(getApplicationContext(), MainActivity.this);
-        String cityTxt = "n/a";
-        String countryTxt = "n/a";
+        String cityTxt = "";
+        String countryTxt = "";
         try {
             cityTxt = geoLocator.getState();
             countryTxt = geoLocator.getCountry();
