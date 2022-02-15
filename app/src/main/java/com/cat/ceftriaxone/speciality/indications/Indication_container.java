@@ -141,7 +141,7 @@ public class Indication_container extends Fragment {
         Indications_names names = new Indications_names();
         Map<Integer, String> indicationsNames = names.getNames();
         String selectedIndicationName = indicationsNames.get(indicationId);
-        String device_id = Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
+        String device_id = "Android-"+Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
         Map<String, String> map = new HashMap<>();
         map.put("mac_address", device_id);
         map.put("screen", selectedIndicationName.toLowerCase(Locale.ROOT));
