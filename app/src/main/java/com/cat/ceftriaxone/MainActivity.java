@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
         if (!DeviceUtils.isDeviceInitiated(getBaseContext())) {
-            addDeviceLocation(device_id, "", "");
+            addDeviceLocation(device_id, "NA", "NA");
         }
         if (!DeviceUtils.isLocationGranted(getBaseContext())) {
 
@@ -254,11 +254,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         map.put("mac_address", device_id);
         map.put("country", country);
         map.put("city", city);
-
         Webservice.getInstance().getApi().addDeviceLocation(map).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                if (country.equals("")) {
+                if (country.equals("NA")) {
                     DeviceUtils.setDeviceInitiated(getBaseContext(), true);
                 } else {
                     DeviceUtils.setDeviceInitiated(getBaseContext(), true);
@@ -286,8 +285,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     //get city and country
     private void getLocationData() {
         Locator geoLocator = new Locator(getApplicationContext(), MainActivity.this);
-        String cityTxt = "";
-        String countryTxt = "";
+        String cityTxt = "NA";
+        String countryTxt = "NA";
         try {
             cityTxt = geoLocator.getState();
             countryTxt = geoLocator.getCountry();
