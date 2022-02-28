@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     BottomNavigationView bottomNavigationView;
     int isHome = 1;
+
     public void setHome(int home) {
         isHome = home;
     }
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        device_id = "Android-"+Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        device_id = "Android-" + Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 //        getLocationDataEnglish();
 
 
@@ -290,6 +291,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         try {
             cityTxt = geoLocator.getState();
             countryTxt = geoLocator.getCountry();
+            int govIndex = cityTxt.toLowerCase().indexOf("governorate");
+            if (govIndex != 0) {
+                cityTxt = cityTxt.substring(0, govIndex);
+            }
         } catch (Exception e) {
             Log.e("Exception", "" + e);
         }
@@ -312,7 +317,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             String countryNameLocate = geoLocator.getCountry();
 
 //            Log.e("Data", ""+cityName +"\n" +stateName+"\n" +countryName );
-            Log.e("Data Locate", ""+cityNameLocate+"\n" +stateNameLocate +"\n" +countryNameLocate );
+            Log.e("Data Locate", "" + cityNameLocate + "\n" + stateNameLocate + "\n" + countryNameLocate);
         } catch (Exception e) {
             Log.e("Exception", "" + e);
         }
