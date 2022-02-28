@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Webservice {
 
-    private static final String MAIN_URL = "https://ceftriaxone.cat-sw.com/api/";
+    private static final String MAIN_URL = "https://ceftriaxone.app/api/";
     private static Webservice instance;
     private final ServiceInterface api;
 

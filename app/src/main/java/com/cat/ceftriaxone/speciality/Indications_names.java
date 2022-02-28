@@ -8,7 +8,7 @@ public class Indications_names {
 
     public Indications_names() {
         names.put(1, "Community acquired pneumonia (CAP)");
-        names.put(2, "Hospital acquired pneumonia (HAP))");
+        names.put(2, "Hospital acquired pneumonia (HAP)");
         names.put(3, "Acute exacerbations of chronic obstructive pulmonary disease (COPD) in adults");
         names.put(4, "Acute otitis media (AOM)");
         names.put(5, "Complicated skin and soft tissue infections");

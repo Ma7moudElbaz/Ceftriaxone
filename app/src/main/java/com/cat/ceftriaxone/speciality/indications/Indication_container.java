@@ -144,7 +144,7 @@ public class Indication_container extends Fragment {
         String device_id = "Android-"+Settings.Secure.getString(getActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
         Map<String, String> map = new HashMap<>();
         map.put("mac_address", device_id);
-        map.put("screen", selectedIndicationName.toLowerCase(Locale.ROOT));
+        map.put("screen", selectedIndicationName);
 
         Webservice.getInstance().getApi().addDeviceActivity(map).enqueue(new Callback<ResponseBody>() {
             @Override
